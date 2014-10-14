@@ -1,0 +1,23 @@
+C:\SpaceInvaderTestHW2\implementation\system.ngc 1413231516
+C:/SpaceInvaderTestHW2/implementation/push_buttons_5bits_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/rs232_uart_1_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/proc_sys_reset_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/clock_generator_0_wrapper.ngc 1413231488
+C:/SpaceInvaderTestHW2/implementation/axi_hdmi_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi_ac97_0_wrapper.ngc 1413231482
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_ilmb_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_dlmb_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/mcb_ddr2_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi4lite_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi4_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi_vdma_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi_intc_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_i_bram_ctrl_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_d_bram_ctrl_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/debug_module_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/digilent_quadspi_cntlr_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/axi_timer_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/fit_timer_0_wrapper.ngc 1413231460
+C:/SpaceInvaderTestHW2/implementation/microblaze_0_bram_block_wrapper.ngc 1413231460
+OK

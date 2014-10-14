@@ -1,0 +1,13 @@
+run
+-opt_mode speed
+-netlist_hierarchy as_optimized
+-opt_level 1
+-p xc6slx45csg324-3
+-top microblaze_0_d_bram_ctrl_wrapper
+-ifmt MIXED
+-ifn microblaze_0_d_bram_ctrl_wrapper_xst.prj
+-ofn microblaze_0_d_bram_ctrl_wrapper.ngc
+-hierarchy_separator /
+-iobuf NO
+-sd {./}
+-vlgincdir {"C:\EE427\SpaceInvaderTestHW2\pcores\" "C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }

@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/Users/joshuas2/Desktop/427/pcores/ac97_427_v1_00_a/data/ac97_427_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Aug 24 14:30:57 2012 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib ac97_427_v1_00_a user_logic vhdl
+lib ac97_427_v1_00_a ac97_427 vhdl

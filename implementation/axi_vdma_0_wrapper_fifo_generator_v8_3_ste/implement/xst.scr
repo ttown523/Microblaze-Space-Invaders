@@ -1,0 +1,13 @@
+run
+-ifmt VHDL
+-ent axi_vdma_0_wrapper_fifo_generator_v8_3_top 
+-p xc6slx4-tqg144-3
+-ifn xst.prj
+-write_timing_constraints No
+-iobuf YES
+-max_fanout 100
+-ofn axi_vdma_0_wrapper_fifo_generator_v8_3_top 
+-ofmt NGC
+-bus_delimiter ()
+-hierarchy_separator /
+-case Maintain

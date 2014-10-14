@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Xst" num="0" delta="new" >Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/opb_ac97.vhd" Line 160: &lt;<arg fmt="%s" index="1">fdr</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/opb_ac97.vhd" Line 167: &lt;<arg fmt="%s" index="1">fdre</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 305: <arg fmt="%s" index="1">debug_i</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 495: <arg fmt="%s" index="1">bus2ip_reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 127: &lt;<arg fmt="%s" index="1">fdcpe</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 572: <arg fmt="%s" index="1">ipclk_playback_accept_st</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 573: <arg fmt="%s" index="1">ipclk_playback_accept_st</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd" Line 83: &lt;<arg fmt="%s" index="1">ramb16_s36_s36</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd" Line 141: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd" Line 154: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_timing.vhd" Line 109: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_timing.vhd" Line 131: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_timing.vhd" Line 148: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_core.vhd" Line 281: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_core.vhd" Line 506: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 769: <arg fmt="%s" index="1">in_fifo_half_empty</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:/EE427/SpaceInvaderTestHW2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd" Line 235: Net &lt;<arg fmt="%s" index="1">status_Reg[11]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">S_AXI_AWADDR&lt;31:9&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">S_AXI_WSTRB&lt;3:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">S_AXI_ARADDR&lt;31:9&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd</arg>&quot; line <arg fmt="%s" index="2">336</arg>: Output port &lt;<arg fmt="%s" index="3">CS_for_gaps</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">I_DECODER</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Address_In_Erly&lt;0:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus_RNW</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_RdCE&lt;0:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_WrCE&lt;0:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/user_logic.vhd</arg>&quot; line <arg fmt="%s" index="2">211</arg>: Output port &lt;<arg fmt="%s" index="3">Sln_errAck</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AC97_CONTROLLER</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/user_logic.vhd</arg>&quot; line <arg fmt="%s" index="2">211</arg>: Output port &lt;<arg fmt="%s" index="3">Sln_retry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AC97_CONTROLLER</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/user_logic.vhd</arg>&quot; line <arg fmt="%s" index="2">211</arg>: Output port &lt;<arg fmt="%s" index="3">Sln_toutSup</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">AC97_CONTROLLER</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">IP2Bus_Error</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">OPB_seqAddr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_Addr&lt;0:26&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_Addr&lt;30:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_Data&lt;26:25&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_Data&lt;23:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Bus2IP_BE&lt;0:3&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">624</arg>: Output port &lt;<arg fmt="%s" index="3">HalfFull</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Playback_BRAM.IN_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">624</arg>: Output port &lt;<arg fmt="%s" index="3">Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Playback_BRAM.IN_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">624</arg>: Output port &lt;<arg fmt="%s" index="3">Underflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Playback_BRAM.IN_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">688</arg>: Output port &lt;<arg fmt="%s" index="3">HalfEmpty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Recording_BRAM.OUT_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">688</arg>: Output port &lt;<arg fmt="%s" index="3">Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Recording_BRAM.OUT_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">688</arg>: Output port &lt;<arg fmt="%s" index="3">Underflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Using_Recording_BRAM.OUT_FIFO</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">719</arg>: Output port &lt;<arg fmt="%s" index="3">AC97_Reg_Read_Data_Valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ac97_core_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">719</arg>: Output port &lt;<arg fmt="%s" index="3">PCM_Playback_Right_Accept</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ac97_core_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">719</arg>: Output port &lt;<arg fmt="%s" index="3">PCM_Record_Right_Valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ac97_core_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">status_Reg&lt;11&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">ac97_fifo</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0</arg>).
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">117</arg>: Output port &lt;<arg fmt="%s" index="3">DOA</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">117</arg>: Output port &lt;<arg fmt="%s" index="3">DOPA</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/bram_fifo.vhd</arg>&quot; line <arg fmt="%s" index="2">117</arg>: Output port &lt;<arg fmt="%s" index="3">DOPB</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_core.vhd</arg>&quot; line <arg fmt="%s" index="2">261</arg>: Output port &lt;<arg fmt="%s" index="3">Bit_Num</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ac97_timing_I_1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">s_axi_rresp_i_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">s_axi_bresp_i_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I_DECODER/ce_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">slave_attachment</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I_DECODER/cs_out_i_0&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">s_axi_rresp_i_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">s_axi_bresp_i_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_out_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ac97_core</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_out_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ac97_core</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_out_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ac97_core</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_out_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ac97_core</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">U1</arg> in unit <arg fmt="%s" index="2">BRAM_FIFO</arg> of type <arg fmt="%s" index="3">RAMB16_S36_S36</arg> has been replaced by <arg fmt="%s" index="4">RAMB16BWER</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="3002" delta="old" >This design contains one or more registers/latches that are directly
+incompatible with the <arg fmt="%s" index="1">Spartan6</arg> architecture. The two primary causes of this is
+either a register or latch described with both an asynchronous set and
+asynchronous reset, or a register or latch described with an asynchronous
+set or reset which however has an initialization value of the opposite 
+polarity (i.e. asynchronous reset with an initialization value of 1).
+ While this circuit can be built, it creates a sub-optimal implementation
+in terms of area, power and performance. For a more optimal implementation
+Xilinx highly recommends one of the following:
+
+       1) Remove either the set or reset from all registers and latches
+          if not needed for required functionality
+       2) Modify the code in order to produce a synchronous set
+          and/or reset (both is preferred)
+       3) Ensure all registers have the same initialization value as the
+          described asynchronous set or reset polarity
+       4) Use the -async_to_sync option to transform the asynchronous
+          set/reset to synchronous operation
+          (timing simulation highly recommended when using this option)
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/Using_Recording_BRAM.OUT_FIFO/overflow_i</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/Using_Recording_BRAM.OUT_FIFO/underflow_i</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/Using_Playback_BRAM.IN_FIFO/overflow_i</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/Using_Playback_BRAM.IN_FIFO/underflow_i</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/ac97_core_I/AC97_Reg_Read_Data_Valid</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/ac97_core_I/record_pcm_right_valid</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/ac97_core_I/accept_pcm_right</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/Using_Recording_BRAM.OUT_FIFO/out_address_9_LD</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">axi_ac97_0_wrapper</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

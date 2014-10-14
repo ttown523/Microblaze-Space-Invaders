@@ -1,0 +1,37 @@
+/*
+ * spaceship.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: superman
+ */
+
+#ifndef SPACESHIP_H_
+#define SPACESHIP_H_
+
+#include "global.h"
+
+#define START_LEFT 5
+#define START_RIGHT 600
+#define SPACESHIP_HEIGHT 14
+#define SPACESHIP_WIDTH 32
+#define SPACESHIP_ROW 50
+#define SPACESHIP_MOVE_AMOUNT 2
+
+#define SHOW_SPACESHIP 1000
+#define MOVE_SPACESHIP 3
+#define ANIMATE_BONUS 5
+
+/***********************************
+ *      Function definitions
+ ***********************************/
+void placeSpaceship(void);
+void moveSpaceship(void);
+void moveSpaceshipLeft(void);
+void moveSpaceshipRight(void);
+void drawSpaceship(void);
+void eraseSpaceship(Boolean hit);
+void spaceshipHit(void);
+void animateBonus(void);
+
+
+#endif /* SPACESHIP_H_ */

@@ -1,0 +1,472 @@
+/*
+ * aliens.c
+ *
+ *  Created on: Oct 1, 2014
+ *      Author: superman
+ */
+
+#include "aliens.h"
+#include "bullet.h"
+#include "tank.h"
+
+static Aliens aliens;
+static pos_t alienExplosionPos;
+unsigned alienSpeed;
+
+static unsigned short lfsr = 0xACE1u;
+static unsigned bit;
+
+/***************************
+ *	  Alien Bitmaps
+ ***************************/
+const int alienExplosion[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+};
+const int topOutAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1),
+};
+
+const int topInAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0),
+};
+
+//Bitmaps for the middle line of aliens
+const int middleOutAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0),
+};
+
+const int middleInAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,0,0,0),
+};
+
+//bitmap for the bottom line of aliens
+const int bottomOutAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1),
+};
+
+const int bottomInAlienSymbol[ALIEN_HEIGHT] =
+{
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0),
+	packWord32(0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0),
+};
+
+
+/*
+ * initAliens:
+ * -----------
+ * Initializes the alien block to its default value when the game begins
+ */
+void initAliens(void){
+	int i;
+	//init position
+	aliens.position.x = 75;
+	aliens.position.y = 100;
+	aliens.prev_position.x = 50;
+	aliens.prev_position.y = 150;
+
+	//init other variables
+	aliens.columns = 10;
+	aliens.rows = 4;
+	aliens.alienIn = T;
+	aliens.moveDir = RIGHT;
+	aliens.colStart = 0;
+	aliens.movingDown = F;
+	aliens.killCount = 0;
+
+	for (i = 0;  i < 55; i++){
+		aliens.alive[i] = T;
+	}
+
+	//initialize lowest alien
+	for ( i = 0; i < 11; i++ ){
+		aliens.lowestAlien[i] = 44 + i;
+	}
+
+	alienExplosionPos.x = 0;
+	alienExplosionPos.y = 0;
+	alienSpeed = 53;
+}
+
+/**
+ * drawAliens:
+ * -----------
+ * Writes the alien block to the frame buffer
+ *
+ * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
+ *
+ * todo: only draw aliens if they are on screen!
+ */
+void drawAliens(void){
+	int row=0, col=0, x = aliens.position.x, y = aliens.position.y, alienWidth = TOP_ALIEN_WIDTH;
+	u8 alienPos=0, i = 0, j = 0;
+
+	int * alienSymbol = (aliens.alienIn == T) ? topInAlienSymbol: topOutAlienSymbol ;
+
+	//erase explosion if necessary...may need to do this based on a timer variable instead
+	if (alienExplosionPos.x != 0)
+		eraseAlienExplosion();
+
+	//prints an alien at the x,y position specified
+	for (alienPos = 0; alienPos < 55; alienPos++) {
+		if (aliens.alive[alienPos] == T) {
+			for (row = x, i = 0;  row < x + ALIEN_HEIGHT; row++, i++)
+				for (col = y, j = 0 ; col < y + alienWidth; col++, j++)
+				 framePointer0[row*640 + col] = alienSymbol[i] & (1 << j) ? WHITE : BLACK ;
+
+			//delete the part of the alien that needs to be deleted
+			deleteAlienPart(x, y, alienWidth);
+		}
+
+		//change the alien bitmap to draw different aliens on different rows
+		//also change the alien width for each alien.
+		if (alienPos == 32){ //after this is the bottom row
+			alienSymbol = (aliens.alienIn == T) ? bottomInAlienSymbol : bottomOutAlienSymbol;
+			alienWidth = BOTTOM_ALIEN_WIDTH;
+		}
+		else if (alienPos == 10){ // after this is the middle row
+			alienSymbol = (aliens.alienIn == T) ? middleInAlienSymbol : middleOutAlienSymbol;
+			alienWidth = MIDDLE_ALIEN_WIDTH;
+		}
+
+		//update the row and column after 11 aliens have been drawn
+		if( (alienPos + 1) % 11 == 0 ){
+			x += ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING;
+			y = aliens.position.y;
+		}
+		else { //update the column only
+			y+= ALIEN_WIDTH;
+		}
+	}
+	//aliens.movingDown = F;
+	if ( aliens.movingDown == T)
+		aliens.movingDown = F;
+	else if (aliens.position.y + aliens.columns*ALIEN_WIDTH >= 620 || aliens.position.y + aliens.colStart*ALIEN_WIDTH < 15 )
+		aliens.movingDown = T;
+}
+
+/**
+ *
+ */
+void deleteAlienPart(int x, int y, int alienWidth){
+	int row, col;
+	if (aliens.movingDown == F) {
+		switch (aliens.moveDir){
+		case RIGHT:
+			for(row = x; row < x + ALIEN_HEIGHT ; row++)
+				for (col = y - HORIZONTAL_MOVE; col < y; col++)
+					 framePointer0[row*640 + col] = BLACK ;
+			break;
+		case LEFT:
+			for(row = x ; row < x + ALIEN_HEIGHT; row++)
+				for (col = y + alienWidth; col < y + alienWidth + HORIZONTAL_MOVE ; col++)
+					 framePointer0[row*640 + col] = BLACK ;
+			break;
+		default:
+			break;
+		}
+	}
+	else {//the aliens moved down
+		for(row = x - (( x-aliens.position.x < 16) ? VERTICAL_MOVE : ALIEN_VERTICAL_SPACING) ; row < x; row++)
+			for (col = y; col < y + alienWidth; col++)
+				 framePointer0[row*640 + col] = BLACK ;
+	}
+}
+
+/**
+ * moveAliens:
+ * -----------
+ * Move the aliens by a constant number of pixels
+ */
+void moveAliens(void){
+
+	if (aliens.movingDown == T){
+
+		aliens.position.x += VERTICAL_MOVE;
+		aliens.moveDir = !aliens.moveDir; //try this first, else use this...(aliens.moveDir== RIGHT) ? LEFT : RIGHT;
+
+		if ( (alienSpeed -= SPEED_UP_AMOUNT) < MAX_ALIEN_SPEED)
+			alienSpeed = MAX_ALIEN_SPEED;
+
+		//alternative...create a lowest alien position in the aliens struct and increment it during kill alien
+		if (aliens.position.x + ALIEN_HEIGHT + aliens.rows*(ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING) > BELOW_THE_BUNKERS)
+			game_over();
+
+	}
+	else {
+		aliens.position.y += (aliens.moveDir== RIGHT) ? HORIZONTAL_MOVE : -HORIZONTAL_MOVE ;
+		aliens.alienIn = (aliens.alienIn == T) ? F : T;
+	}
+}
+
+/**
+* killAlien:
+* ----------
+* Kill the alien at the specified index
+*
+*/
+void killAlien(int index){
+	unsigned col. row;
+
+	aliens.alive[index] = F;
+
+	if (++aliens.killCount == 2){
+		//add tank life
+		//reset aliens block slightly lower
+		addTankLife();
+		aliens.killCount = 0;
+	}
+
+
+	col = index % 11;
+	while(aliens.alive[ aliens.lowestAlien[col] ] == F)  //update the lowestAlien array...for firing alien bullets
+		aliens.lowestAlien[col] -=11;
+	while( aliens.lowestAlien[aliens.colStart] < 0 )  //check to see if the leftmost column is gone
+		aliens.colStart++;
+	while ( aliens.lowestAlien[aliens.columns] < 0) //check to see if the rightmost column is gone
+		aliens.columns--;
+
+	row = index / 11;
+	++aliens.rowHits[row];
+	while ( aliens.rowHits[aliens.rows] == 11 ) //check to see if the bottom row is gone
+		aliens.rows--;
+
+//	//update the lowestAlien array
+//	col = index % 11;
+//	if(aliens.lowestAlien[col] == index){
+//		aliens.lowestAlien[col] -= 11;
+//		while(aliens.alive[ aliens.lowestAlien[col] ] == F)
+//			aliens.lowestAlien[col] -=11;
+//	}
+//
+//	//check to see if the left most row has been eliminated (will be needed for lab 4)
+//	if (aliens.lowestAlien[aliens.colStart] < 0) {
+//		while( aliens.lowestAlien[aliens.colStart] < 0 )
+//		aliens.colStart++;
+//	}
+//	else { //check to see if the rightmost column is now gone
+//		while ( aliens.lowestAlien[aliens.columns-1] < 0) { //
+//			aliens.columns--;
+//		}
+//	}
+
+	//update score
+	if (index < 11)
+		incrementScore(40);
+	else if (index < 32 )
+		incrementScore(20);
+	else
+		incrementScore(10);
+
+
+	drawAlienExplosion(index/11, col);
+
+	//also need to check and see if the bottom row is gone...don't know if I even need this yet, but i will keep it here
+	//++aliens.rowHits[index / 11];
+	//if ( ++aliens.rowHits[aliens.rows-1] == 11)
+	//	aliens.rows--;
+}
+
+/**
+ * drawAlienExplosion:
+ * -------------------
+ */
+void drawAlienExplosion(unsigned short row, unsigned short col) {
+
+	int i, j;
+
+	//draw an alien explosion at the new location
+	alienExplosionPos.y = aliens.position.y  + col*ALIEN_WIDTH;
+	alienExplosionPos.x = aliens.position.x + row*(ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING);
+
+	for (row = alienExplosionPos.x, i = 0 ; row < alienExplosionPos.x + ALIEN_HEIGHT ; row++, i++)
+		for (col = alienExplosionPos.y, j = 0; col < alienExplosionPos.y + EXPLOSION_WIDTH ; col++, j++)
+			framePointer0[row*640 + col] = alienExplosion[i] & (1 << j) ? OFF_WHITE : BLACK;
+
+}
+
+/**
+ *  eraseAlienExplosion
+ *  -------------------
+ *
+ */
+void eraseAlienExplosion(void){
+	int i, j, row, col;
+
+	for (row = alienExplosionPos.x, i = 0 ; row < alienExplosionPos.x + ALIEN_HEIGHT ; row++, i++)
+		for (col = alienExplosionPos.y, j = 0; col < alienExplosionPos.y + EXPLOSION_WIDTH ; col++, j++)
+			framePointer0[row*640 + col] = BLACK;
+
+	alienExplosionPos.x = 0;
+	alienExplosionPos.y = 0;
+}
+
+/**
+ * launchAlienBullet:
+ * -----------------
+ * Chooses a random alien on the bottom row, and places a bullet directly under him
+ *
+ * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
+ *
+ * todo: check to see if the alien kill count is less than the max before launching a bullet
+ */
+void launchAlienBullet(void) {
+
+	int col = getRandomNumber() % 11, row, startX, startY;
+
+	//wait until you get a column with aliens in it
+//	while(column < 0 ){
+//		column = rand() % 11;
+//	}
+
+	while(aliens.lowestAlien[col] < 0) { //may change this
+		col = getRandomNumber() % 11;
+//		if (++col > 10)
+//			col = 0;
+	}
+
+	//calculate the position of the lowest alien in that column...update this
+	row = aliens.lowestAlien[col] / 11;
+	startX = aliens.position.x + (row* (ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING)) + ALIEN_HEIGHT;
+	startY = aliens.position.y + (col * ALIEN_WIDTH) + (ALIEN_HALF_WIDTH);
+
+	//get the first available alien bullet (only 4 can be in the air at a time)
+	u8 bulletNum = getFirstAvailableBullet();
+	Boolean cross = (getRandomNumber()%2) ? T : F ;
+
+	if(bulletNum == 4)
+		return;
+	else //only launch if there is a bullet available
+		placeAlienBullet(bulletNum, startX, startY, cross);
+}
+
+
+/**
+*
+*/
+unsigned short getAlienIndex(int x, int y){
+	unsigned short row;
+
+	row = (x - aliens.position.x) / (ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING) ;
+	unsigned short col = (y - aliens.position.y)/ALIEN_WIDTH;
+
+	return (row*11 + col);
+}
+
+
+/**
+ * pseudo random function for testing...will update this once we move to the DDR because its not very random
+ */
+unsigned prand(void){
+	bit  = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5) ) & 1;
+	return lfsr =  (lfsr >> 1) | (bit << 15);
+}

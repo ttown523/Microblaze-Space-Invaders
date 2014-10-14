@@ -1,0 +1,111 @@
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+WARNING:EDK:1687 - Invalid path specified for ModuleSearchPath in XMP file.
+   Please make sure that the directory specified exists.
+
+Checking platform configuration ...
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 9 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4_0 - 3 master(s) : 1 slave(s) 
+
+Checking port drivers...
+WARNING:EDK:4180 - PORT: bscan_tdo1, CONNECTOR: bscan_tdo1 - No driver found.
+   Port will be driven to GND -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 239 
+WARNING:EDK:4181 - PORT: axi4lite_0_M_AXI_ACLK_pin, CONNECTOR: axi4lite_0_M_ACLK
+   - floating connection - C:\EE427\SpaceInvaderTestHW2\system.mhs line 39 
+WARNING:EDK:4181 - PORT: bscan_tdi, CONNECTOR: bscan_tdi - floating connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 232 
+WARNING:EDK:4181 - PORT: bscan_reset, CONNECTOR: bscan_reset - floating
+   connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 233 
+WARNING:EDK:4181 - PORT: bscan_shift, CONNECTOR: bscan_shift - floating
+   connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 234 
+WARNING:EDK:4181 - PORT: bscan_update, CONNECTOR: bscan_update - floating
+   connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 235 
+WARNING:EDK:4181 - PORT: bscan_capture, CONNECTOR: bscan_capture - floating
+   connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 236 
+WARNING:EDK:4181 - PORT: bscan_sel1, CONNECTOR: bscan_sel1 - floating connection
+   -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 237 
+WARNING:EDK:4181 - PORT: bscan_drck1, CONNECTOR: bscan_drck1 - floating
+   connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm
+   _v2_1_0.mpd line 238 
+WARNING:EDK:4181 - PORT: mm2s_prmry_reset_out_n, CONNECTOR: MM2S_RESET_OUT_N -
+   floating connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
+   a\axi_vdma_v2_1_0.mpd line 201 
+WARNING:EDK:4181 - PORT: m_axis_mm2s_tuser, CONNECTOR:
+   axi_vdma_0_M_AXIS_MM2S_TUSER - floating connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
+   a\axi_vdma_v2_1_0.mpd line 207 
+WARNING:EDK:4181 - PORT: s2mm_prmry_reset_out_n, CONNECTOR: S2MM_RESET_OUT_N -
+   floating connection -
+   C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
+   a\axi_vdma_v2_1_0.mpd line 224 
+WARNING:EDK:4181 - PORT: M_AXIS_S2MM_ACLK, CONNECTOR: M_AXIS_S2MM_ACLK_int -
+   floating connection - C:\EE427\SpaceInvaderTestHW2\system.mhs line 246 
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4lite_0.
+
+INFO: Setting C_RANGE_CHECK = OFF for axi_interconnect axi4_0; no DECERR
+checking will be performed.
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+Invoking MIG ...
+MIG returned 0
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+Conversion to XML complete.

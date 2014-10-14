@@ -1,0 +1,38 @@
+/*
+ * charGen.h
+ *
+ *  Created on: Oct 6, 2014
+ *      Author: superman
+ */
+
+#ifndef CHARGEN_H_
+#define CHARGEN_H_
+
+#include "global.h"
+#include "xbasic_types.h"
+
+/****************************
+ *		  Macros
+ ****************************/
+#define CHAR_SIZE 10
+#define ONE_WIDTH 4
+
+#define SCORE_X 5
+#define SCORE_Y 5
+
+#define LIVES_X 5
+#define LIVES_Y 400
+
+
+#define SCORE_START_X 5
+#define SCORE_START_Y (5 + 70)
+
+
+/***********************************
+ *      Function definitions
+ ***********************************/
+void initializeScoreAndLives(void);
+void printScore(unsigned score);
+void printNumber(int num, int x, int y);
+//void eraseNumber(u8 digits);
+#endif /* CHARGEN_H_ */

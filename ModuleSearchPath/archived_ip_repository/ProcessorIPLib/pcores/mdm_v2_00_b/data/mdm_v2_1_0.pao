@@ -1,0 +1,19 @@
+################################################################################
+##
+## Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.  Xilinx, Inc.
+##
+## mdm.pao
+##
+## Peripheral Analyze Order
+##
+################################################################################
+
+lib proc_common_v3_00_a pselect
+lib proc_common_v3_00_a family_support
+lib proc_common_v3_00_a proc_common_pkg
+lib proc_common_v3_00_a ipif_pkg
+lib axi_lite_ipif_v1_01_a all
+lib mdm_v2_00_b srl_fifo
+lib mdm_v2_00_b jtag_control
+lib mdm_v2_00_b mdm_core
+lib mdm_v2_00_b mdm

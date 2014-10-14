@@ -1,0 +1,1295 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "axi_hdmi_0_wrapper_xst.prj"
+Verilog Include Directory          : {"C:\Users\joshuas2\Desktop\427\pcores\" "C:\Users\joshuas2\Downloads\Atlys_BSB_Support_v_3_4\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc6slx45csg324-3
+Output File Name                   : "../implementation/axi_hdmi_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : axi_hdmi_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+INFO:Xst - Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/DRAM16XN.v" into library axi_hdmi_v1_00_a
+Parsing module <DRAM16XN>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/serdes_1_to_5_diff_data.v" into library axi_hdmi_v1_00_a
+Parsing module <serdes_1_to_5_diff_data>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/phsaligner.v" into library axi_hdmi_v1_00_a
+Parsing module <phsaligner>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/chnlbond.v" into library axi_hdmi_v1_00_a
+Parsing module <chnlbond>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/decode.v" into library axi_hdmi_v1_00_a
+Parsing module <decode>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/verilog/dvi_decoder.v" into library axi_hdmi_v1_00_a
+Parsing module <dvi_decoder>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <proc_common_pkg>.
+Parsing package body <proc_common_pkg>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd" into library proc_common_v3_00_a
+Parsing package <family_support>.
+Parsing package body <family_support>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd" into library proc_common_v3_00_a
+Parsing entity <pselect_f>.
+Parsing architecture <imp> of entity <pselect_f>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <ipif_pkg>.
+Parsing package body <ipif_pkg>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd" into library proc_common_v3_00_a
+Parsing entity <counter_f>.
+Parsing architecture <imp> of entity <counter_f>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <address_decoder>.
+Parsing architecture <IMP> of entity <address_decoder>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/Video.vhd" into library axi_hdmi_v1_00_a
+Parsing package <Video>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/TMDSEncoder.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <TMDSEncoder>.
+Parsing architecture <Behavioral> of entity <tmdsencoder>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/SerializerN_1.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <SerializerN_1>.
+Parsing architecture <Behavioral> of entity <serializern_1>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/LocalRst.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <LocalRst>.
+Parsing architecture <Behavioral> of entity <localrst>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <slave_attachment>.
+Parsing architecture <imp> of entity <slave_attachment>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/VideoTimingCtl.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <VideoTimingCtl>.
+Parsing architecture <Behavioral> of entity <videotimingctl>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/twi_slave_rom.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <twi_slave_rom>.
+Parsing architecture <Behavioral> of entity <twi_slave_rom>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/twi_slave.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <twi_slave>.
+Parsing architecture <Behavioral> of entity <twi_slave>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/DVITransmitter.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <DVITransmitter>.
+Parsing architecture <Behavioral> of entity <dvitransmitter>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/data_dealign.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <data_dealign>.
+Parsing architecture <Behavioral> of entity <data_dealign>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/data_align.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <data_align>.
+Parsing architecture <Behavioral> of entity <data_align>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/clk_gen.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <clk_gen>.
+Parsing architecture <Behavioral> of entity <clk_gen>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <axi_hdmi_reg>.
+Parsing architecture <Behavioral> of entity <axi_hdmi_reg>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <axi_lite_ipif>.
+Parsing architecture <imp> of entity <axi_lite_ipif>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/hdmi_ddc.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <hdmi_ddc>.
+Parsing architecture <Behavioral> of entity <hdmi_ddc>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <axi_hdmi_transmitter>.
+Parsing architecture <Behavioral> of entity <axi_hdmi_transmitter>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg_top.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <axi_hdmi_reg_top>.
+Parsing architecture <Behavioral> of entity <axi_hdmi_reg_top>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_receiver.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <axi_hdmi_receiver>.
+Parsing architecture <Behavioral> of entity <axi_hdmi_receiver>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi.vhd" into library axi_hdmi_v1_00_a
+Parsing entity <axi_hdmi>.
+Parsing architecture <Behavioral> of entity <axi_hdmi>.
+Parsing VHDL file "C:\Users\joshuas2\Desktop\427\hdl\axi_hdmi_0_wrapper.vhd" into library work
+Parsing entity <axi_hdmi_0_wrapper>.
+Parsing architecture <STRUCTURE> of entity <axi_hdmi_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <axi_hdmi_0_wrapper> (architecture <STRUCTURE>) from library <work>.
+
+Elaborating entity <axi_hdmi> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <axi_hdmi_transmitter> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <DVITransmitter> (architecture <Behavioral>) from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <TMDSEncoder> (architecture <Behavioral>) from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <SerializerN_1> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <VideoTimingCtl> (architecture <Behavioral>) from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <LocalRst> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <clk_gen> (architecture <Behavioral>) from library <axi_hdmi_v1_00_a>.
+WARNING:HDLCompiler:1127 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd" Line 419: Assignment to vde_2_dly ignored, since the identifier is never used
+INFO:HDLCompiler:679 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd" Line 490. Case statement is complete. others clause is never selected
+
+Elaborating entity <axi_hdmi_reg_top> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <axi_lite_ipif> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <slave_attachment> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <address_decoder> (architecture <IMP>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+INFO:HDLCompiler:679 - "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 412. Case statement is complete. others clause is never selected
+
+Elaborating entity <axi_hdmi_reg> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <hdmi_ddc> (architecture <Behavioral>) from library <axi_hdmi_v1_00_a>.
+
+Elaborating entity <twi_slave> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+INFO:HDLCompiler:679 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/twi_slave.vhd" Line 170. Case statement is complete. others clause is never selected
+
+Elaborating entity <twi_slave_rom> (architecture <Behavioral>) with generics from library <axi_hdmi_v1_00_a>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <axi_hdmi_0_wrapper>.
+    Related source file is "c:/users/joshuas2/desktop/427/hdl/axi_hdmi_0_wrapper.vhd".
+    Summary:
+	no macro.
+Unit <axi_hdmi_0_wrapper> synthesized.
+
+Synthesizing Unit <axi_hdmi>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi.vhd".
+        C_USE_HDMI_RECEIVER = 0
+        C_USE_HDMI_TRANSMITTER = 1
+        C_USE_HDMI_REGS = 1
+        C_USE_HDMI_DDC = 1
+        C_USE_MM2S_DATA_ALIGN = 0
+        C_USE_S2MM_DATA_ALIGN = 0
+        C_AXI_STREAM_DATA_WIDTH = 32
+        C_BASEADDR = "01111110001000100000000000000000"
+        C_HIGHADDR = "01111110001000101111111111111111"
+WARNING:Xst:647 - Input <S2MM_FSYNC_IN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <M_AXIS_S2MM_TREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_CLK_P> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_CLK_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_2_P> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_2_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_1_P> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_1_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_0_P> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TMDS_RX_0_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <axi_hdmi> synthesized.
+
+Synthesizing Unit <axi_hdmi_transmitter>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd".
+        C_USE_MM2S_DATA_ALIGN = 0
+        C_AXI_STREAM_DATA_WIDTH = 32
+WARNING:Xst:647 - Input <M_AXIS_MM2S_TDATA<31:24>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <M_AXIS_MM2S_TKEEP<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <M_AXIS_MM2S_TLAST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd" line 257: Output port <HCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_transmitter.vhd" line 257: Output port <VCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <VDE_dly>.
+    Found 1-bit register for signal <HS_dly>.
+    Found 1-bit register for signal <VS_dly>.
+    Found 2-bit register for signal <CState>.
+    Found 1-bit register for signal <fsync_int2>.
+    Found finite state machine <FSM_0> for signal <CState>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 2                                              |
+    | Clock              | ACLK (rising_edge)                             |
+    | Reset              | Reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | sidle                                          |
+    | Power Up State     | sidle                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   4 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <axi_hdmi_transmitter> synthesized.
+
+Synthesizing Unit <DVITransmitter>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/dvitransmitter.vhd".
+    Summary:
+	no macro.
+Unit <DVITransmitter> synthesized.
+
+Synthesizing Unit <TMDSEncoder>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/tmdsencoder.vhd".
+WARNING:Xst:647 - Input <RST_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit register for signal <n1_d>.
+    Found 8-bit register for signal <d_d>.
+    Found 1-bit register for signal <c0_d>.
+    Found 1-bit register for signal <c1_d>.
+    Found 5-bit register for signal <n1_q_m>.
+    Found 5-bit register for signal <n0_q_m>.
+    Found 9-bit register for signal <q_m_d>.
+    Found 1-bit register for signal <c0_dd>.
+    Found 1-bit register for signal <c1_dd>.
+    Found 1-bit register for signal <de_dd>.
+    Found 5-bit register for signal <cnt_t_1>.
+    Found 10-bit register for signal <q_out_d>.
+    Found 1-bit register for signal <de_d>.
+    Found 5-bit adder for signal <n0210> created at line 59.
+    Found 5-bit adder for signal <n0213> created at line 59.
+    Found 5-bit adder for signal <n0216> created at line 59.
+    Found 5-bit adder for signal <n0219> created at line 59.
+    Found 5-bit adder for signal <n0222> created at line 59.
+    Found 5-bit adder for signal <n0225> created at line 59.
+    Found 5-bit adder for signal <GND_13_o_GND_13_o_add_7_OUT> created at line 59.
+    Found 5-bit adder for signal <n0232> created at line 87.
+    Found 5-bit adder for signal <n0235> created at line 87.
+    Found 5-bit adder for signal <n0238> created at line 87.
+    Found 5-bit adder for signal <n0241> created at line 87.
+    Found 5-bit adder for signal <n0244> created at line 87.
+    Found 5-bit adder for signal <n0247> created at line 87.
+    Found 5-bit adder for signal <int_n1_q_m> created at line 87.
+    Found 5-bit adder for signal <n0253> created at line 122.
+    Found 5-bit adder for signal <cnt_t_1[4]_dc_bias[4]_add_41_OUT> created at line 122.
+    Found 5-bit adder for signal <cnt_t_1[4]_dc_bias[4]_add_45_OUT> created at line 120.
+    Found 5-bit subtractor for signal <GND_13_o_int_n1_q_m[4]_sub_22_OUT<4:0>> created at line 92.
+    Found 5-bit subtractor for signal <dc_bias> created at line 45.
+    Found 5-bit subtractor for signal <cnt_t_1[4]_GND_13_o_sub_39_OUT<4:0>> created at line 123.
+    Found 5-bit subtractor for signal <cnt_t_1[4]_dc_bias[4]_sub_40_OUT<4:0>> created at line 123.
+    Found 5-bit subtractor for signal <cnt_t_1[4]_dc_bias[4]_sub_44_OUT<4:0>> created at line 121.
+    Found 5-bit comparator greater for signal <n1_d[4]_GND_13_o_LessThan_11_o> created at line 81
+    Found 5-bit comparator equal for signal <n1_q_m[4]_n0_q_m[4]_equal_27_o> created at line 100
+    Found 5-bit comparator greater for signal <cnt_t_1[4]_GND_13_o_LessThan_28_o> created at line 102
+    Found 5-bit comparator greater for signal <n1_q_m[4]_n0_q_m[4]_LessThan_29_o> created at line 102
+    Found 5-bit comparator greater for signal <GND_13_o_cnt_t_1[4]_LessThan_30_o> created at line 103
+    Found 5-bit comparator greater for signal <n0_q_m[4]_n1_q_m[4]_LessThan_31_o> created at line 103
+    Summary:
+	inferred  22 Adder/Subtractor(s).
+	inferred  53 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  33 Multiplexer(s).
+Unit <TMDSEncoder> synthesized.
+
+Synthesizing Unit <SerializerN_1>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/serializern_1.vhd".
+        N = 10
+    Found 1-bit register for signal <gear>.
+    Found 1-bit register for signal <gear_s>.
+    Found 5-bit register for signal <intDPIn>.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <SerializerN_1> synthesized.
+
+Synthesizing Unit <VideoTimingCtl>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/videotimingctl.vhd".
+    Found 10-bit register for signal <VCnt>.
+    Found 1-bit register for signal <vde>.
+    Found 1-bit register for signal <hs>.
+    Found 1-bit register for signal <vs>.
+    Found 11-bit register for signal <HCnt>.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_13_OUT> created at line 197.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_15_OUT> created at line 199.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_22_OUT> created at line 209.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_24_OUT> created at line 209.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_32_OUT> created at line 221.
+    Found 32-bit subtractor for signal <GND_43_o_GND_43_o_sub_34_OUT> created at line 222.
+    Found 10-bit adder for signal <VCnt[9]_GND_43_o_add_16_OUT> created at line 202.
+    Found 11-bit adder for signal <HCnt[10]_GND_43_o_add_18_OUT> created at line 205.
+    Found 32-bit comparator equal for signal <GND_43_o_GND_43_o_equal_14_o> created at line 197
+    Found 32-bit comparator equal for signal <GND_43_o_GND_43_o_equal_16_o> created at line 199
+    Found 32-bit comparator lessequal for signal <n0019> created at line 209
+    Found 32-bit comparator greater for signal <GND_43_o_GND_43_o_LessThan_25_o> created at line 209
+    Found 31-bit comparator lessequal for signal <n0024> created at line 211
+    Found 31-bit comparator greater for signal <GND_43_o_V_AV_FP_S[30]_LessThan_27_o> created at line 211
+    Found 32-bit comparator greater for signal <GND_43_o_GND_43_o_LessThan_33_o> created at line 221
+    Found 32-bit comparator greater for signal <GND_43_o_GND_43_o_LessThan_35_o> created at line 222
+    Found 31-bit comparator greater for signal <GND_43_o_V_AV[30]_LessThan_36_o> created at line 222
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <VideoTimingCtl> synthesized.
+
+Synthesizing Unit <LocalRst>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/localrst.vhd".
+        RESET_PERIOD = 4
+    Found 1-bit register for signal <RstQ<2>>.
+    Found 1-bit register for signal <RstQ<3>>.
+    Found 1-bit register for signal <RstQ<4>>.
+    Found 1-bit register for signal <RstQ<1>>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <LocalRst> synthesized.
+
+Synthesizing Unit <clk_gen>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/clk_gen.vhd".
+    Found 1-bit register for signal <RstDbncQ<2>>.
+    Found 1-bit register for signal <RstDbncQ<3>>.
+    Found 1-bit register for signal <RstDbncQ<4>>.
+    Found 1-bit register for signal <RstDbncQ<5>>.
+    Found 1-bit register for signal <RstDbncQ<6>>.
+    Found 1-bit register for signal <RstDbncQ<7>>.
+    Found 1-bit register for signal <RstDbncQ<8>>.
+    Found 1-bit register for signal <RstDbncQ<9>>.
+    Found 100-bit register for signal <RstQ>.
+    Found 3-bit register for signal <CState>.
+    Found 10-bit register for signal <DcmProgReg>.
+    Found 4-bit register for signal <bitCount>.
+    Found 32-bit register for signal <prevRes>.
+    Found 1-bit register for signal <RstDbncQ<1>>.
+    Found finite state machine <FSM_1> for signal <CState>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | CLK_I (rising_edge)                            |
+    | Reset              | DcmRst (positive)                              |
+    | Reset type         | synchronous                                    |
+    | Reset State        | sidle                                          |
+    | Power Up State     | sidle                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <bitCount[3]_GND_246_o_add_37_OUT> created at line 389.
+    Found 32-bit comparator equal for signal <n0050> created at line 326
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 155 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <clk_gen> synthesized.
+
+Synthesizing Unit <axi_hdmi_reg_top>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg_top.vhd".
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+        C_S_AXI_DATA_WIDTH = 32
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_BASEADDR = "01111110001000100000000000000000"
+        C_HIGHADDR = "01111110001000101111111111111111"
+        C_FAMILY = "virtex6"
+        C_NUM_REG = 1
+        C_NUM_MEM = 1
+        C_SLV_AWIDTH = 32
+        C_SLV_DWIDTH = 32
+    Set property "MAX_FANOUT = 10000" for signal <S_AXI_ACLK>.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+    Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg_top.vhd" line 163: Output port <Bus2IP_Addr> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg_top.vhd" line 163: Output port <Bus2IP_CS> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg_top.vhd" line 163: Output port <Bus2IP_RNW> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <axi_hdmi_reg_top> synthesized.
+
+Synthesizing Unit <axi_lite_ipif>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd".
+        C_S_AXI_DATA_WIDTH = 32
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110001000100000000000000000","0000000000000000000000000000000001111110001000101111111111111111")
+        C_ARD_NUM_CE_ARRAY = (2)
+        C_FAMILY = "virtex6"
+    Summary:
+	no macro.
+Unit <axi_lite_ipif> synthesized.
+
+Synthesizing Unit <slave_attachment>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd".
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110001000100000000000000000","0000000000000000000000000000000001111110001000101111111111111111")
+        C_ARD_NUM_CE_ARRAY = (2)
+        C_IPIF_ABUS_WIDTH = 32
+        C_IPIF_DBUS_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_FAMILY = "virtex6"
+WARNING:Xst:647 - Input <S_AXI_AWADDR<31:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_WSTRB<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_ARADDR<31:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" line 336: Output port <CS_for_gaps> of the instance <I_DECODER> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <state>.
+    Found 2-bit register for signal <s_axi_rresp_i>.
+    Found 32-bit register for signal <s_axi_rdata_i>.
+    Found 1-bit register for signal <s_axi_rvalid_i>.
+    Found 2-bit register for signal <s_axi_bresp_i>.
+    Found 1-bit register for signal <s_axi_bvalid_i>.
+    Found 4-bit register for signal <INCLUDE_DPHASE_TIMER.dpto_cnt>.
+    Found 1-bit register for signal <rst>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 4                                              |
+    | Clock              | S_AXI_ACLK (rising_edge)                       |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | sm_idle                                        |
+    | Power Up State     | sm_idle                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <INCLUDE_DPHASE_TIMER.dpto_cnt[3]_GND_257_o_add_31_OUT> created at line 502.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <slave_attachment> synthesized.
+
+Synthesizing Unit <address_decoder>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd".
+        C_BUS_AWIDTH = 9
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110001000100000000000000000","0000000000000000000000000000000001111110001000101111111111111111")
+        C_ARD_NUM_CE_ARRAY = (2)
+        C_FAMILY = "nofamily"
+WARNING:Xst:647 - Input <Address_In_Erly<0:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Bus_RNW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <Bus_RNW_reg>.
+    Found 1-bit register for signal <ce_out_i<0>>.
+    Found 1-bit register for signal <ce_out_i<1>>.
+    Found 1-bit register for signal <cs_out_i>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <address_decoder> synthesized.
+
+Synthesizing Unit <pselect_f_1>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 1
+        C_AW = 1
+        C_BAR = "0"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_1> synthesized.
+
+Synthesizing Unit <pselect_f_2>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 1
+        C_AW = 1
+        C_BAR = "1"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_2> synthesized.
+
+Synthesizing Unit <axi_hdmi_reg>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/axi_hdmi_reg.vhd".
+        C_SLV_DWIDTH = 32
+    Found 32-bit register for signal <DISP_IN_RESOLUTION>.
+    Found 32-bit register for signal <DISP_OUT_RESOLUTION>.
+    Found 32-bit 4-to-1 multiplexer for signal <slv_ip2bus_data> created at line 108.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred  66 Multiplexer(s).
+Unit <axi_hdmi_reg> synthesized.
+
+Synthesizing Unit <hdmi_ddc>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/hdmi_ddc.vhd".
+    Summary:
+	no macro.
+Unit <hdmi_ddc> synthesized.
+
+Synthesizing Unit <twi_slave>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/twi_slave.vhd".
+        ADDR = "10100000"
+    Found 4-bit register for signal <SampleScl>.
+    Found 3-bit register for signal <CState>.
+    Found 4-bit register for signal <CntRead>.
+    Found 4-bit register for signal <CntSend>.
+    Found 8-bit register for signal <TempIn>.
+    Found 1-bit register for signal <SDA_O>.
+    Found 8-bit register for signal <TempOut>.
+    Found 1-bit register for signal <Rnw>.
+    Found 1-bit register for signal <Ack>.
+    Found 4-bit register for signal <SampleSda>.
+    Found finite state machine <FSM_3> for signal <CState>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 58                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 8                                              |
+    | Clock              | CLK_I (rising_edge)                            |
+    | Reset              | RST_I (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | sidle                                          |
+    | Power Up State     | sidle                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <CntRead[3]_GND_263_o_add_30_OUT> created at line 192.
+    Found 4-bit adder for signal <CntSend[3]_GND_263_o_add_36_OUT> created at line 208.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <twi_slave> synthesized.
+
+Synthesizing Unit <twi_slave_rom>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/axi_hdmi_v1_00_a/hdl/vhdl/twi_slave_rom.vhd".
+        DEPTH = "10000000"
+    Found 8-bit register for signal <RdPtr>.
+    Found 8-bit adder for signal <RdPtr[7]_GND_264_o_add_1_OUT> created at line 99.
+    Found 128x8-bit Read Only RAM for signal <D_O>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+Unit <twi_slave_rom> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x8-bit single-port Read Only RAM                   : 1
+# Adders/Subtractors                                   : 79
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 32-bit subtractor                                     : 6
+ 4-bit adder                                           : 4
+ 5-bit adder                                           : 51
+ 5-bit subtractor                                      : 15
+ 8-bit adder                                           : 1
+# Registers                                            : 100
+ 1-bit register                                        : 56
+ 10-bit register                                       : 5
+ 100-bit register                                      : 1
+ 11-bit register                                       : 1
+ 2-bit register                                        : 2
+ 32-bit register                                       : 4
+ 4-bit register                                        : 6
+ 5-bit register                                        : 16
+ 8-bit register                                        : 6
+ 9-bit register                                        : 3
+# Comparators                                          : 28
+ 31-bit comparator greater                             : 2
+ 31-bit comparator lessequal                           : 1
+ 32-bit comparator equal                               : 3
+ 32-bit comparator greater                             : 3
+ 32-bit comparator lessequal                           : 1
+ 5-bit comparator equal                                : 3
+ 5-bit comparator greater                              : 15
+# Multiplexers                                         : 188
+ 1-bit 2-to-1 multiplexer                              : 148
+ 10-bit 2-to-1 multiplexer                             : 12
+ 11-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 3
+ 32-bit 4-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 13
+ 8-bit 2-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 3
+# FSMs                                                 : 4
+# Xors                                                 : 47
+ 1-bit xor2                                            : 47
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <TMDSEncoder>.
+The following registers are absorbed into accumulator <cnt_t_1>: 1 register on signal <cnt_t_1>.
+	The following adders/subtractors are grouped into adder tree <Madd_int_n1_q_m_Madd1> :
+ 	<Madd_n0238_Madd> in block <TMDSEncoder>, 	<Madd_n0244_Madd> in block <TMDSEncoder>, 	<Madd_int_n1_q_m_Madd> in block <TMDSEncoder>.
+	The following adders/subtractors are grouped into adder tree <Madd_GND_13_o_GND_13_o_add_7_OUT_Madd1> :
+ 	<Madd_n0216_Madd> in block <TMDSEncoder>, 	<Madd_n0222_Madd> in block <TMDSEncoder>, 	<Madd_GND_13_o_GND_13_o_add_7_OUT_Madd> in block <TMDSEncoder>.
+Unit <TMDSEncoder> synthesized (advanced).
+
+Synthesizing (advanced) Unit <VideoTimingCtl>.
+The following registers are absorbed into counter <HCnt>: 1 register on signal <HCnt>.
+The following registers are absorbed into counter <VCnt>: 1 register on signal <VCnt>.
+Unit <VideoTimingCtl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clk_gen>.
+The following registers are absorbed into counter <bitCount>: 1 register on signal <bitCount>.
+Unit <clk_gen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <slave_attachment>.
+The following registers are absorbed into counter <INCLUDE_DPHASE_TIMER.dpto_cnt>: 1 register on signal <INCLUDE_DPHASE_TIMER.dpto_cnt>.
+Unit <slave_attachment> synthesized (advanced).
+
+Synthesizing (advanced) Unit <twi_slave>.
+The following registers are absorbed into counter <CntSend>: 1 register on signal <CntSend>.
+The following registers are absorbed into counter <CntRead>: 1 register on signal <CntRead>.
+Unit <twi_slave> synthesized (advanced).
+
+Synthesizing (advanced) Unit <twi_slave_rom>.
+The following registers are absorbed into counter <RdPtr>: 1 register on signal <RdPtr>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_D_O> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <RdPtr<6:0>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <D_O>           |          |
+    -----------------------------------------------------------------------
+Unit <twi_slave_rom> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x8-bit single-port distributed Read Only RAM       : 1
+# Adders/Subtractors                                   : 33
+ 32-bit subtractor                                     : 6
+ 5-bit adder                                           : 12
+ 5-bit subtractor                                      : 15
+# Adder Trees                                          : 6
+ 5-bit / 4-inputs adder tree                           : 6
+# Counters                                             : 7
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 4-bit up counter                                      : 4
+ 8-bit up counter                                      : 1
+# Accumulators                                         : 3
+ 5-bit up loadable accumulator                         : 3
+# Registers                                            : 477
+ Flip-Flops                                            : 477
+# Comparators                                          : 28
+ 31-bit comparator greater                             : 2
+ 31-bit comparator lessequal                           : 1
+ 32-bit comparator equal                               : 3
+ 32-bit comparator greater                             : 3
+ 32-bit comparator lessequal                           : 1
+ 5-bit comparator equal                                : 3
+ 5-bit comparator greater                              : 15
+# Multiplexers                                         : 194
+ 1-bit 2-to-1 multiplexer                              : 162
+ 10-bit 2-to-1 multiplexer                             : 11
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 3
+ 32-bit 4-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 10
+ 9-bit 2-to-1 multiplexer                              : 3
+# FSMs                                                 : 4
+# Xors                                                 : 47
+ 1-bit xor2                                            : 47
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <s_axi_rresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_bresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_2> on signal <state[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ sm_idle  | 00
+ sm_read  | 01
+ sm_write | 10
+ sm_resp  | 11
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/FSM_0> on signal <CState[1:2]> with gray encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ sidle       | 00
+ swaittvalid | 01
+ sready      | 11
+-------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/FSM_1> on signal <CState[1:7]> with one-hot encoding.
+------------------------
+ State      | Encoding
+------------------------
+ sidle      | 0000001
+ sprogm     | 0100000
+ sprogmwait | 0000100
+ sprogd     | 0000010
+ sprogdwait | 0010000
+ sgo        | 0001000
+ swait      | 1000000
+------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/FSM_3> on signal <CState[1:3]> with sequential encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ sidle        | 000
+ sreadaddr    | 001
+ scheckrnw    | 010
+ ssendack     | 011
+ ssendreadack | 110
+ sreaddata    | 100
+ swritedata   | 101
+ sreadack     | 111
+--------------------------
+WARNING:Xst:1710 - FF/Latch <DcmProgReg_9> (without init value) has a constant value of 0 in block <clk_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <n1_d_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <n1_q_m_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance PLL_BASE_inst in unit PLL_BASE_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <n1_q_m_0> in Unit <TMDSEncoder> is equivalent to the following FF/Latch, which will be removed : <n0_q_m_0> 
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n1_q_m_0> is unconnected in block <TMDSEncoder>.
+
+Optimizing unit <axi_hdmi_0_wrapper> ...
+
+Optimizing unit <slave_attachment> ...
+
+Optimizing unit <address_decoder> ...
+
+Optimizing unit <axi_hdmi_reg> ...
+
+Optimizing unit <axi_hdmi_transmitter> ...
+
+Optimizing unit <clk_gen> ...
+
+Optimizing unit <TMDSEncoder> ...
+WARNING:Xst:1293 - FF/Latch <cnt_t_1_0> has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <SerializerN_1> ...
+
+Optimizing unit <VideoTimingCtl> ...
+
+Optimizing unit <twi_slave> ...
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/c0_d> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/c1_d> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/c0_d> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/c1_d> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_1> has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/c1_dd> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/c0_dd> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/c1_dd> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/c0_dd> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> of sequential type is unconnected in block <axi_hdmi_0_wrapper>.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n0_q_m_4> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/n0_q_m_4> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_blue/n0_q_m_4> (without init value) has a constant value of 0 in block <axi_hdmi_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/de_d> in Unit <axi_hdmi_0_wrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/de_d> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_blue/de_d> 
+INFO:Xst:2261 - The FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/de_dd> in Unit <axi_hdmi_0_wrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_green/de_dd> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_blue/de_dd> 
+INFO:Xst:2261 - The FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear> in Unit <axi_hdmi_0_wrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/gear> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d1_serializer_10_1/gear> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d0_serializer_10_1/gear> 
+INFO:Xst:2261 - The FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4> in Unit <axi_hdmi_0_wrapper> is equivalent to the following 4 FFs/Latches, which will be removed : <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_3> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_2> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_1> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s> in Unit <axi_hdmi_0_wrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/gear_s> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d1_serializer_10_1/gear_s> <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d0_serializer_10_1/gear_s> 
+Found area constraint ratio of 100 (+ 0) on block axi_hdmi_0_wrapper, actual ratio is 3.
+
+Final Macro Processing ...
+
+Processing Unit <axi_hdmi_0_wrapper> :
+	Found 97-bit shift register for signal <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/RstQ_96>.
+	Found 2-bit shift register for signal <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/de_dd>.
+	Found 2-bit shift register for signal <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_blue/c1_dd>.
+	Found 2-bit shift register for signal <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_blue/c0_dd>.
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_VideoTimingCtl/Inst_LocalRst/RstQ_4> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <axi_hdmi_0_wrapper> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 402
+ Flip-Flops                                            : 402
+# Shift Registers                                      : 4
+ 2-bit shift register                                  : 3
+ 97-bit shift register                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : axi_hdmi_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 858
+#      GND                         : 1
+#      INV                         : 9
+#      LUT1                        : 7
+#      LUT2                        : 46
+#      LUT3                        : 105
+#      LUT4                        : 139
+#      LUT5                        : 198
+#      LUT6                        : 210
+#      MUXCY                       : 90
+#      MUXF7                       : 9
+#      VCC                         : 1
+#      XORCY                       : 43
+# FlipFlops/Latches                : 406
+#      FD                          : 170
+#      FDE                         : 55
+#      FDP                         : 4
+#      FDR                         : 41
+#      FDRE                        : 133
+#      FDS                         : 3
+# Shift Registers                  : 7
+#      SRL16                       : 1
+#      SRLC16E                     : 3
+#      SRLC32E                     : 3
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 4
+#      OBUFDS                      : 4
+# DCMs                             : 1
+#      DCM_CLKGEN                  : 1
+# Others                           : 10
+#      BUFPLL                      : 1
+#      OSERDES2                    : 8
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             406  out of  54576     0%  
+ Number of Slice LUTs:                  721  out of  27288     2%  
+    Number used as Logic:               714  out of  27288     2%  
+    Number used as Memory:                7  out of   6408     0%  
+       Number used as SRL:                7
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    817
+   Number with an unused Flip Flop:     411  out of    817    50%  
+   Number with an unused LUT:            96  out of    817    11%  
+   Number of fully used LUT-FF pairs:   310  out of    817    37%  
+   Number of unique control sets:        27
+
+IO Utilization: 
+ Number of IOs:                         254
+ Number of bonded IOBs:                   8  out of    218     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of PLL_ADVs:                      1  out of      4    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                        | Clock buffer(FF name)                                                                               | Load  |
+------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+ACLK                                                                                | NONE(axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiTxRom/RdPtr_0)                                 | 125   |
+S_AXI_ACLK                                                                          | NONE(axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 108   |
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1| BUFG                                                                                                | 163   |
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3| BUFG                                                                                                | 17    |
+------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 5.688ns (Maximum Frequency: 175.806MHz)
+   Minimum input arrival time before clock: 2.983ns
+   Maximum output required time after clock: 3.727ns
+   Maximum combinational path delay: 3.150ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ACLK'
+  Clock period: 4.836ns (frequency: 206.792MHz)
+  Total number of paths / destination ports: 2485 / 217
+-------------------------------------------------------------------------
+Delay:               4.836ns (Levels of Logic = 3)
+  Source:            axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd1 (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiTxRom/RdPtr_0 (FF)
+  Source Clock:      ACLK rising
+  Destination Clock: ACLK rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd1 to axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiTxRom/RdPtr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             28   0.447   1.235  axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd1 (axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd1)
+     LUT5:I4->O            1   0.205   0.808  axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd3-In41_SW0 (N72)
+     LUT6:I3->O            1   0.205   0.580  axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd3-In42 (axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd3-In42)
+     LUT5:I4->O            9   0.205   0.829  axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd3-In44 (axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiSlave/CState_FSM_FFd3-In4)
+     FDRE:CE                   0.322          axi_hdmi_0/USE_HDMI_DDC.Inst_AxiHDMIDdc/Inst_TwiTxRom/RdPtr_0
+    ----------------------------------------
+    Total                      4.836ns (1.384ns logic, 3.452ns route)
+                                       (28.6% logic, 71.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
+  Clock period: 3.856ns (frequency: 259.307MHz)
+  Total number of paths / destination ports: 520 / 183
+-------------------------------------------------------------------------
+Delay:               3.856ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_OUT_RESOLUTION_31 (FF)
+  Source Clock:      S_AXI_ACLK rising
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg to axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_OUT_RESOLUTION_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              37   0.447   1.591  axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg)
+     LUT3:I0->O           32   0.205   1.291  axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/_n0099<1>1 (axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/_n0099)
+     FDRE:CE                   0.322          axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_OUT_RESOLUTION_0
+    ----------------------------------------
+    Total                      3.856ns (0.974ns logic, 2.882ns route)
+                                       (25.3% logic, 74.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1'
+  Clock period: 5.688ns (frequency: 175.806MHz)
+  Total number of paths / destination ports: 4701 / 171
+-------------------------------------------------------------------------
+Delay:               5.688ns (Levels of Logic = 5)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n0_q_m_3 (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/cnt_t_1_4 (FF)
+  Source Clock:      axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1 rising
+  Destination Clock: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1 rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n0_q_m_3 to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/cnt_t_1_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               8   0.447   0.907  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n0_q_m_3 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n0_q_m_3)
+     LUT2:I0->O            5   0.203   0.943  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Msub_dc_bias_lut<3>1 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Msub_dc_bias_lut<3>)
+     LUT6:I3->O           16   0.205   1.005  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/cond_balanced (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/cond_balanced)
+     LUT6:I5->O            1   0.205   0.684  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Maccum_cnt_t_1_lut<3>1 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Maccum_cnt_t_1_lut<3>1)
+     LUT6:I4->O            1   0.203   0.580  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Maccum_cnt_t_1_lut<3>3 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Maccum_cnt_t_1_lut<3>)
+     LUT6:I5->O            1   0.205   0.000  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Maccum_cnt_t_1_xor<4>11 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/Result<4>)
+     FDR:D                     0.102          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/cnt_t_1_4
+    ----------------------------------------
+    Total                      5.688ns (1.570ns logic, 4.118ns route)
+                                       (27.6% logic, 72.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3'
+  Clock period: 1.861ns (frequency: 537.389MHz)
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Delay:               1.861ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/intDPIn_4 (FF)
+  Source Clock:      axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3 rising
+  Destination Clock: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3 rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/intDPIn_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              16   0.447   1.109  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s)
+     LUT4:I2->O            1   0.203   0.000  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/Mmux_DP_I[9]_DP_I[4]_mux_0_OUT11 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/DP_I[9]_DP_I[4]_mux_0_OUT<0>)
+     FD:D                      0.102          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_d2_serializer_10_1/intDPIn_0
+    ----------------------------------------
+    Total                      1.861ns (0.752ns logic, 1.109ns route)
+                                       (40.4% logic, 59.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 162 / 140
+-------------------------------------------------------------------------
+Offset:              2.282ns (Levels of Logic = 1)
+  Source:            S_AXI_ARESETN (PAD)
+  Destination:       axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_OUT_RESOLUTION_31 (FF)
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: S_AXI_ARESETN to axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_OUT_RESOLUTION_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     INV:I->O             65   0.206   1.646  axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/Bus2IP_Resetn_inv1_INV_0 (axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
+     FDRE:R                    0.430          axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/Inst_AxiHDMIReg/DISP_IN_RESOLUTION_0
+    ----------------------------------------
+    Total                      2.282ns (0.636ns logic, 1.646ns route)
+                                       (27.9% logic, 72.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
+  Total number of paths / destination ports: 102 / 77
+-------------------------------------------------------------------------
+Offset:              2.983ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst:PROGDONE (PAD)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/prevRes_31 (FF)
+  Destination Clock: ACLK rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst:PROGDONE to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/prevRes_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    DCM_CLKGEN:PROGDONE    8   0.000   1.167  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DcmProgDone)
+     LUT6:I0->O           32   0.203   1.291  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/_n0133_inv1 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/_n0133_inv)
+     FDE:CE                    0.322          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/prevRes_0
+    ----------------------------------------
+    Total                      2.983ns (0.525ns logic, 2.458ns route)
+                                       (17.6% logic, 82.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1'
+  Total number of paths / destination ports: 247 / 37
+-------------------------------------------------------------------------
+Offset:              2.871ns (Levels of Logic = 3)
+  Source:            S_AXIS_MM2S_TDATA<16> (PAD)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n1_d_2 (FF)
+  Destination Clock: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1 rising
+
+  Data Path: S_AXIS_MM2S_TDATA<16> to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n1_d_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT4:I0->O            4   0.203   0.931  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd_xor<0>21 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd_1)
+     LUT4:I0->O            2   0.203   0.981  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd2_lut<1>1 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd2_lut<1>)
+     LUT6:I0->O            1   0.203   0.000  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd2_xor<2>11 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/ADDERTREE_INTERNAL_Madd_22)
+     FD:D                      0.102          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_TMDSEncoder_red/n1_d_2
+    ----------------------------------------
+    Total                      2.871ns (0.959ns logic, 1.912ns route)
+                                       (33.4% logic, 66.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 46 / 37
+-------------------------------------------------------------------------
+Offset:              2.260ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (FF)
+  Destination:       S_AXI_ARREADY (PAD)
+  Source Clock:      S_AXI_ACLK rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg to S_AXI_ARREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              37   0.447   1.610  axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg)
+     LUT4:I0->O            2   0.203   0.000  axi_hdmi_0/USE_HDMI_REGS.Inst_AxiHDMISoftReg/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
+    ----------------------------------------
+    Total                      2.260ns (0.650ns logic, 1.610ns route)
+                                       (28.8% logic, 71.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.447ns (Levels of Logic = 0)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/VDE_dly (FF)
+  Destination:       S_AXIS_MM2S_TREADY (PAD)
+  Source Clock:      axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1 rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/VDE_dly to S_AXIS_MM2S_TREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.000  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/VDE_dly (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/VDE_dly)
+    ----------------------------------------
+    Total                      0.447ns (0.447ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
+  Total number of paths / destination ports: 12 / 5
+-------------------------------------------------------------------------
+Offset:              3.727ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/SRL16_inst (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst:RST (PAD)
+  Source Clock:      ACLK rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/SRL16_inst to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst:RST
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SRL16:CLK->Q         35   1.313   1.439  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/SRL16_inst (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/Start_Up_Rst)
+     LUT4:I2->O            7   0.203   0.773  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DcmRst1 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DcmRst)
+    DCM_CLKGEN:RST             0.000          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/DCM_CLKGEN_inst
+    ----------------------------------------
+    Total                      3.727ns (1.516ns logic, 2.211ns route)
+                                       (40.7% logic, 59.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3'
+  Total number of paths / destination ports: 20 / 20
+-------------------------------------------------------------------------
+Offset:              1.161ns (Levels of Logic = 0)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4 (FF)
+  Destination:       axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_s:D2 (PAD)
+  Source Clock:      axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3 rising
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4 to axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_s:D2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.447   0.714  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4 (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4)
+    OSERDES2:D1                0.000          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_s
+    ----------------------------------------
+    Total                      1.161ns (0.447ns logic, 0.714ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 42 / 42
+-------------------------------------------------------------------------
+Delay:               3.150ns (Levels of Logic = 1)
+  Source:            axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_m:OQ (PAD)
+  Destination:       TMDS_TX_CLK_P (PAD)
+
+  Data Path: axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_m:OQ to TMDS_TX_CLK_P
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    OSERDES2:OQ            1   0.000   0.579  axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/oserdes_m (axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/intDSOut)
+     OBUFDS:I->O               2.571          axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DVITransmitter/Inst_clk_serializer_10_1/io_datax_out (TMDS_TX_CLK_P)
+    ----------------------------------------
+    Total                      3.150ns (2.571ns logic, 0.579ns route)
+                                       (81.6% logic, 18.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ACLK
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+ACLK                                                                                |    4.836|         |         |         |
+S_AXI_ACLK                                                                          |    9.825|         |         |         |
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1|    1.165|         |         |         |
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock S_AXI_ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+S_AXI_ACLK     |    3.856|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+ACLK                                                                                |    2.518|         |         |         |
+S_AXI_ACLK                                                                          |   14.601|         |         |         |
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1|    5.688|         |         |         |
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1|    2.032|         |         |         |
+axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3|    1.861|         |         |         |
+------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.45 secs
+ 
+--> 
+
+Total memory usage is 288128 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   45 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
+

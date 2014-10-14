@@ -1,0 +1,16 @@
+##############################################################################
+## Filename:          C:/Users/joshuas2/Desktop/427/pcores/axi_ac97_v1_00_a/data/axi_ac97_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Aug 24 14:38:32 2012 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib axi_ac97_v1_00_a ac97_timing vhdl
+lib axi_ac97_v1_00_a ac97_core vhdl
+lib axi_ac97_v1_00_a bram_fifo vhdl
+lib axi_ac97_v1_00_a srl_fifo vhdl
+lib axi_ac97_v1_00_a ac97_fifo vhdl
+lib axi_ac97_v1_00_a opb_ac97 vhdl
+lib axi_ac97_v1_00_a user_logic vhdl
+lib axi_ac97_v1_00_a axi_ac97 vhdl

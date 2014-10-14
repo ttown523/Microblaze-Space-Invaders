@@ -1,0 +1,29 @@
+Release 13.4 ngcbuild O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\ngcbuild.exe -p
+xc6slx45csg324-3 -intstyle silent -i -sd .. axi4_0_wrapper.ngc ../axi4_0_wrapper
+
+Reading NGO file
+"C:/Users/joshuas2/Desktop/427/implementation/axi4_0_wrapper/axi4_0_wrapper.ngc"
+...
+Loading design module "../axi4_0_wrapper_fifo_generator_v8_4.ngc"...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGCBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 156616 kilobytes
+
+Writing NGC file "../axi4_0_wrapper.ngc" ...
+Total REAL time to NGCBUILD completion:  3 sec
+Total CPU time to NGCBUILD completion:   3 sec
+
+Writing NGCBUILD log file "../axi4_0_wrapper.blc"...

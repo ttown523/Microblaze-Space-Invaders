@@ -1,0 +1,1147 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "digilent_quadspi_cntlr_wrapper_xst.prj"
+Verilog Include Directory          : {"C:\Users\joshuas2\Desktop\427\pcores\" "C:\Users\joshuas2\Downloads\Atlys_BSB_Support_v_3_4\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc6slx45csg324-3
+Output File Name                   : "../implementation/digilent_quadspi_cntlr_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : digilent_quadspi_cntlr_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+INFO:Xst - Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_tr8.v" into library d_qspi_axi_v1_00_a
+Parsing module <spi_tr8>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v" into library d_qspi_axi_v1_00_a
+Parsing module <spi_fifo_send>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v" into library d_qspi_axi_v1_00_a
+Parsing module <spi_fifo_receive>.
+Analyzing Verilog file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" into library d_qspi_axi_v1_00_a
+Parsing module <spi_sf>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <proc_common_pkg>.
+Parsing package body <proc_common_pkg>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd" into library proc_common_v3_00_a
+Parsing package <family_support>.
+Parsing package body <family_support>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd" into library proc_common_v3_00_a
+Parsing entity <pselect_f>.
+Parsing architecture <imp> of entity <pselect_f>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd" into library proc_common_v3_00_a
+Parsing package <ipif_pkg>.
+Parsing package body <ipif_pkg>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd" into library proc_common_v3_00_a
+Parsing entity <counter_f>.
+Parsing architecture <imp> of entity <counter_f>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <address_decoder>.
+Parsing architecture <IMP> of entity <address_decoder>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <slave_attachment>.
+Parsing architecture <imp> of entity <slave_attachment>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/user_logic.vhd" into library d_qspi_axi_v1_00_a
+Parsing entity <user_logic>.
+Parsing architecture <IMP> of entity <user_logic>.
+Parsing VHDL file "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd" into library axi_lite_ipif_v1_01_a
+Parsing entity <axi_lite_ipif>.
+Parsing architecture <imp> of entity <axi_lite_ipif>.
+Parsing VHDL file "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd" into library d_qspi_axi_v1_00_a
+Parsing entity <d_qspi_axi>.
+Parsing architecture <IMP> of entity <d_qspi_axi>.
+Parsing VHDL file "C:\Users\joshuas2\Desktop\427\hdl\digilent_quadspi_cntlr_wrapper.vhd" into library work
+Parsing entity <digilent_quadspi_cntlr_wrapper>.
+Parsing architecture <STRUCTURE> of entity <digilent_quadspi_cntlr_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <digilent_quadspi_cntlr_wrapper> (architecture <STRUCTURE>) from library <work>.
+
+Elaborating entity <d_qspi_axi> (architecture <IMP>) with generics from library <d_qspi_axi_v1_00_a>.
+
+Elaborating entity <axi_lite_ipif> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <slave_attachment> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <address_decoder> (architecture <IMP>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+INFO:HDLCompiler:679 - "C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 412. Case statement is complete. others clause is never selected
+
+Elaborating entity <user_logic> (architecture <IMP>) with generics from library <d_qspi_axi_v1_00_a>.
+Going to verilog side to elaborate module spi_sf
+
+Elaborating module <spi_sf(idle=0,send_cmd=1,send_addr_0=3,send_addr_1=2,send_addr_2=6,send_dummy=7,prepare_read_data=15,read_data=4,prepare_send_data=14,send_data=13)>.
+
+Elaborating module <spi_tr8>.
+WARNING:HDLCompiler:189 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" Line 465: Size mismatch in connection of port <dq_t_delayed>. Formal port size is 4-bit while actual signal size is 1-bit.
+
+Elaborating module <spi_fifo_send>.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v" Line 54: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v" Line 99: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v" Line 101: Result of 32-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:1127 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" Line 472: Assignment to send_buffer_almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" Line 473: Assignment to send_buffer_almost_full ignored, since the identifier is never used
+
+Elaborating module <spi_fifo_receive>.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v" Line 54: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v" Line 99: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v" Line 101: Result of 32-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:1127 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" Line 481: Assignment to receive_buffer_almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/joshuas2/Downloads/Atlys_BSB_Support_v_3_4/Atlys_BSB_Support_v_3_4/Atlys_AXI_BSB_Support/lib/Digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" Line 482: Assignment to receive_buffer_almost_full ignored, since the identifier is never used
+Back to vhdl to continue elaboration
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <digilent_quadspi_cntlr_wrapper>.
+    Related source file is "c:/users/joshuas2/desktop/427/hdl/digilent_quadspi_cntlr_wrapper.vhd".
+    Summary:
+	no macro.
+Unit <digilent_quadspi_cntlr_wrapper> synthesized.
+
+Synthesizing Unit <d_qspi_axi>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd".
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+        C_S_AXI_DATA_WIDTH = 32
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_BASEADDR = "01111110010000000000000000000000"
+        C_HIGHADDR = "01111110010000001111111111111111"
+        C_FAMILY = "spartan6"
+        C_NUM_REG = 1
+        C_NUM_MEM = 1
+        C_SLV_AWIDTH = 32
+        C_SLV_DWIDTH = 32
+    Set property "MAX_FANOUT = 10000" for signal <S_AXI_ACLK>.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+    Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd" line 233: Output port <Bus2IP_Addr> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd" line 233: Output port <Bus2IP_CS> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd" line 233: Output port <Bus2IP_RNW> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <d_qspi_axi> synthesized.
+
+Synthesizing Unit <axi_lite_ipif>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd".
+        C_S_AXI_DATA_WIDTH = 32
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110010000000000000000000000","0000000000000000000000000000000001111110010000001111111111111111")
+        C_ARD_NUM_CE_ARRAY = (9)
+        C_FAMILY = "spartan6"
+    Summary:
+	no macro.
+Unit <axi_lite_ipif> synthesized.
+
+Synthesizing Unit <slave_attachment>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd".
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110010000000000000000000000","0000000000000000000000000000000001111110010000001111111111111111")
+        C_ARD_NUM_CE_ARRAY = (9)
+        C_IPIF_ABUS_WIDTH = 32
+        C_IPIF_DBUS_WIDTH = 32
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_USE_WSTRB = 0
+        C_DPHASE_TIMEOUT = 8
+        C_FAMILY = "spartan6"
+WARNING:Xst:647 - Input <S_AXI_AWADDR<31:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_WSTRB<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_ARADDR<31:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" line 336: Output port <CS_for_gaps> of the instance <I_DECODER> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <state>.
+    Found 2-bit register for signal <s_axi_rresp_i>.
+    Found 32-bit register for signal <s_axi_rdata_i>.
+    Found 1-bit register for signal <s_axi_rvalid_i>.
+    Found 2-bit register for signal <s_axi_bresp_i>.
+    Found 1-bit register for signal <s_axi_bvalid_i>.
+    Found 4-bit register for signal <INCLUDE_DPHASE_TIMER.dpto_cnt>.
+    Found 1-bit register for signal <rst>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 4                                              |
+    | Clock              | S_AXI_ACLK (rising_edge)                       |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | sm_idle                                        |
+    | Power Up State     | sm_idle                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <INCLUDE_DPHASE_TIMER.dpto_cnt[3]_GND_14_o_add_31_OUT> created at line 502.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <slave_attachment> synthesized.
+
+Synthesizing Unit <address_decoder>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd".
+        C_BUS_AWIDTH = 9
+        C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001111110010000000000000000000000","0000000000000000000000000000000001111110010000001111111111111111")
+        C_ARD_NUM_CE_ARRAY = (9)
+        C_FAMILY = "nofamily"
+WARNING:Xst:647 - Input <Address_In_Erly<0:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Bus_RNW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <Bus_RNW_reg>.
+    Found 1-bit register for signal <ce_out_i<0>>.
+    Found 1-bit register for signal <ce_out_i<1>>.
+    Found 1-bit register for signal <ce_out_i<2>>.
+    Found 1-bit register for signal <ce_out_i<3>>.
+    Found 1-bit register for signal <ce_out_i<4>>.
+    Found 1-bit register for signal <ce_out_i<5>>.
+    Found 1-bit register for signal <ce_out_i<6>>.
+    Found 1-bit register for signal <ce_out_i<7>>.
+    Found 1-bit register for signal <ce_out_i<8>>.
+    Found 1-bit register for signal <cs_out_i>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <address_decoder> synthesized.
+
+Synthesizing Unit <pselect_f_1>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0000"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_1> synthesized.
+
+Synthesizing Unit <pselect_f_2>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0001"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_2> synthesized.
+
+Synthesizing Unit <pselect_f_3>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0010"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_3> synthesized.
+
+Synthesizing Unit <pselect_f_4>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0011"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_4> synthesized.
+
+Synthesizing Unit <pselect_f_5>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0100"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_5> synthesized.
+
+Synthesizing Unit <pselect_f_6>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0101"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_6> synthesized.
+
+Synthesizing Unit <pselect_f_7>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0110"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_7> synthesized.
+
+Synthesizing Unit <pselect_f_8>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "0111"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_8> synthesized.
+
+Synthesizing Unit <pselect_f_9>.
+    Related source file is "c:/xilinx/13.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 4
+        C_AW = 4
+        C_BAR = "1000"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_9> synthesized.
+
+Synthesizing Unit <user_logic>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/vhdl/user_logic.vhd".
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+        C_NUM_REG = 9
+        C_SLV_DWIDTH = 32
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
+    Found 32-bit register for signal <STATUS_REG>.
+    Found 32-bit register for signal <OCCUPANCY_RXFIFO_REG>.
+    Found 32-bit register for signal <OCCUPANCY_TXFIFO_REG>.
+    Found 32-bit register for signal <CONTROL_CYCLE_REG>.
+    Found 32-bit register for signal <DATA_IN_REG>.
+    Found 32-bit register for signal <DATA_OUT_REG>.
+    Found 32-bit register for signal <CONTROL_FIFO_REG>.
+    Found 32-bit register for signal <MODES_REG>.
+    Found 32-bit register for signal <RESET_REG>.
+    Summary:
+	inferred 288 D-type flip-flop(s).
+	inferred 161 Multiplexer(s).
+Unit <user_logic> synthesized.
+
+Synthesizing Unit <spi_sf>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v".
+        idle = 0
+        send_cmd = 1
+        send_addr_0 = 3
+        send_addr_1 = 2
+        send_addr_2 = 6
+        send_dummy = 7
+        prepare_read_data = 15
+        read_data = 4
+        prepare_send_data = 14
+        send_data = 13
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" line 470: Output port <almost_empty> of the instance <spi2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" line 470: Output port <almost_full> of the instance <spi2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" line 479: Output port <almost_empty> of the instance <spi3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v" line 479: Output port <almost_full> of the instance <spi3> is unconnected or connected to loadless signal.
+    Found 4-bit register for signal <state>.
+    Found 2-bit register for signal <mode>.
+    Found 1-bit register for signal <start>.
+    Found 1-bit register for signal <start_same_state>.
+    Found 1-bit register for signal <state_dly<0>>.
+    Found 1-bit register for signal <read_dly>.
+    Found 1-bit register for signal <read_one_byte_done>.
+    Found 1-bit register for signal <write_dly>.
+    Found 1-bit register for signal <write_one_byte_done>.
+    Found 1-bit register for signal <cycle_done>.
+    Found 9-bit register for signal <count_nr_bytes_read>.
+    Found 9-bit register for signal <count_nr_bytes_send>.
+    Found 1-bit register for signal <rd_en_r>.
+    Found 8-bit register for signal <data_output>.
+    Found 1-bit register for signal <wr_en_r>.
+    Found 8-bit register for signal <data_in_buff_receive>.
+    Found 1-bit register for signal <rd_en_s>.
+    Found 8-bit register for signal <d_in>.
+    Found 1-bit register for signal <wr_en_s>.
+    Found 8-bit register for signal <data_in_buff_send>.
+    Found 1-bit register for signal <start_session_dly>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 29                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 14                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit adder for signal <count_nr_bytes_read[8]_GND_27_o_add_56_OUT> created at line 370.
+    Found 9-bit adder for signal <count_nr_bytes_send[8]_GND_27_o_add_63_OUT> created at line 382.
+    Found 9-bit comparator equal for signal <count_nr_bytes_read[8]_nr_of_bytes[8]_equal_23_o> created at line 239
+    Found 9-bit comparator equal for signal <count_nr_bytes_send[8]_nr_of_bytes[8]_equal_25_o> created at line 249
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  11 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_sf> synthesized.
+
+Synthesizing Unit <spi_tr8>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_tr8.v".
+        idle = 3'b000
+        idle_wait = 3'b001
+        send_dummy = 3'b011
+        send_data = 3'b010
+        read_data = 3'b110
+        idle_clk = 2'b00
+        gen_clk = 2'b01
+        got = 2'b00
+        buc = 2'b01
+        sfarsit = 2'b11
+        trig_start = 2'b00
+        trig_posedge = 2'b01
+        preend_event = 2'b11
+        end_event = 2'b10
+    Found 4-bit register for signal <dq_o>.
+    Found 4-bit register for signal <dq_t>.
+    Found 1-bit register for signal <s>.
+    Found 2-bit register for signal <state_clk>.
+    Found 14-bit register for signal <count_c>.
+    Found 3-bit register for signal <state>.
+    Found 8-bit register for signal <dload_in>.
+    Found 4-bit register for signal <count_dummy>.
+    Found 4-bit register for signal <count_send>.
+    Found 8-bit register for signal <dreg_out>.
+    Found 4-bit register for signal <count_read>.
+    Found 8-bit register for signal <dout>.
+    Found 1-bit register for signal <done>.
+    Found 3-bit register for signal <state_delayed>.
+    Found 1-bit register for signal <done_dly>.
+    Found 1-bit register for signal <done_dly2>.
+    Found 4-bit register for signal <dq_t_delay>.
+    Found 4-bit register for signal <dq_t_delay2>.
+    Found 2-bit register for signal <stare>.
+    Found 2-bit register for signal <cstate>.
+    Found 1-bit register for signal <s_delayed>.
+    Found 1-bit register for signal <start_mode2_div_rate2_buf>.
+    Found 1-bit register for signal <start_mode2_div_rate2>.
+    Found 1-bit register for signal <signal_start>.
+    Found 1-bit register for signal <done_for_wr>.
+    Found 1-bit register for signal <c>.
+    Found finite state machine <FSM_2> for signal <state_clk>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 20                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_4> for signal <stare>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_5> for signal <cstate>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 13-bit subtractor for signal <GND_28_o_GND_28_o_sub_19_OUT> created at line 147.
+    Found 14-bit subtractor for signal <GND_28_o_GND_28_o_sub_21_OUT> created at line 153.
+    Found 4-bit subtractor for signal <count_send[3]_GND_28_o_sub_96_OUT> created at line 370.
+    Found 4-bit subtractor for signal <count_read[3]_GND_28_o_sub_110_OUT> created at line 398.
+    Found 4-bit subtractor for signal <dummy_clks[3]_GND_28_o_sub_122_OUT> created at line 427.
+    Found 14-bit adder for signal <count_c[13]_GND_28_o_add_58_OUT> created at line 252.
+    Found 5-bit adder for signal <_n0308> created at line 349.
+    Found 4-bit adder for signal <count_dummy[3]_GND_28_o_add_88_OUT> created at line 352.
+    Found 8-bit 4-to-1 multiplexer for signal <dload_out> created at line 52.
+    Found 1-bit 4-to-1 multiplexer for signal <dq_0_cmb> created at line 45.
+    Found 1-bit 4-to-1 multiplexer for signal <dq_1_cmb> created at line 46.
+    Found 1-bit tristate buffer for signal <dq_o_cmb<3>> created at line 172
+    Found 1-bit tristate buffer for signal <dq_o_cmb<2>> created at line 172
+    Found 1-bit tristate buffer for signal <dq_o_cmb<1>> created at line 172
+    Found 1-bit tristate buffer for signal <dq_o_cmb<0>> created at line 172
+    Found 32-bit comparator equal for signal <GND_28_o_GND_28_o_equal_20_o> created at line 147
+    Found 32-bit comparator equal for signal <poss_c> created at line 153
+    Found 32-bit comparator lessequal for signal <n0029> created at line 160
+    Found 32-bit comparator greater for signal <GND_28_o_GND_28_o_LessThan_27_o> created at line 161
+    Found 13-bit comparator lessequal for signal <n0049> created at line 206
+    Found 13-bit comparator lessequal for signal <n0129> created at line 419
+    Found 4-bit comparator equal for signal <count_dummy[3]_dummy_clks[3]_equal_123_o> created at line 427
+    Found 4-bit comparator equal for signal <count_send[3]_GND_28_o_equal_125_o> created at line 428
+    Found 4-bit comparator equal for signal <count_read[3]_GND_28_o_equal_127_o> created at line 429
+    Found 5-bit comparator equal for signal <GND_28_o_GND_28_o_equal_87_o> created at line 349
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred  79 D-type flip-flop(s).
+	inferred  10 Comparator(s).
+	inferred  19 Multiplexer(s).
+	inferred   4 Tristate(s).
+	inferred   4 Finite State Machine(s).
+Unit <spi_tr8> synthesized.
+
+Synthesizing Unit <spi_fifo_send>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v".
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <mem>, simulation mismatch.
+    Found 261x8-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 9-bit register for signal <wr_ptr>.
+    Found 9-bit register for signal <count>.
+    Found 1-bit register for signal <empty>.
+    Found 1-bit register for signal <almost_empty>.
+    Found 1-bit register for signal <full>.
+    Found 1-bit register for signal <almost_full>.
+    Found 9-bit register for signal <rd_ptr>.
+    Found 9-bit adder for signal <rd_ptr[8]_GND_33_o_add_1_OUT> created at line 54.
+    Found 9-bit adder for signal <wr_ptr[8]_GND_33_o_add_8_OUT> created at line 54.
+    Found 9-bit adder for signal <count[8]_GND_33_o_add_15_OUT> created at line 99.
+    Found 9-bit subtractor for signal <GND_33_o_GND_33_o_sub_17_OUT<8:0>> created at line 101.
+    Found 9-bit comparator equal for signal <next_wr_ptr[8]_next_rd_ptr[8]_equal_23_o> created at line 110
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <spi_fifo_send> synthesized.
+
+Synthesizing Unit <spi_fifo_receive>.
+    Related source file is "c:/users/joshuas2/downloads/atlys_bsb_support_v_3_4/atlys_bsb_support_v_3_4/atlys_axi_bsb_support/lib/digilent/pcores/d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v".
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <mem>, simulation mismatch.
+    Found 261x8-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 9-bit register for signal <wr_ptr>.
+    Found 9-bit register for signal <count>.
+    Found 1-bit register for signal <empty>.
+    Found 1-bit register for signal <almost_empty>.
+    Found 1-bit register for signal <full>.
+    Found 1-bit register for signal <almost_full>.
+    Found 9-bit register for signal <rd_ptr>.
+    Found 9-bit adder for signal <rd_ptr[8]_GND_34_o_add_1_OUT> created at line 54.
+    Found 9-bit adder for signal <wr_ptr[8]_GND_34_o_add_8_OUT> created at line 54.
+    Found 9-bit adder for signal <count[8]_GND_34_o_add_15_OUT> created at line 99.
+    Found 9-bit subtractor for signal <GND_34_o_GND_34_o_sub_17_OUT<8:0>> created at line 101.
+    Found 9-bit comparator equal for signal <next_wr_ptr[8]_next_rd_ptr[8]_equal_23_o> created at line 110
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <spi_fifo_receive> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 261x8-bit dual-port RAM                               : 2
+# Adders/Subtractors                                   : 17
+ 13-bit subtractor                                     : 1
+ 14-bit adder                                          : 1
+ 14-bit subtractor                                     : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 3
+ 5-bit adder                                           : 1
+ 9-bit adder                                           : 6
+ 9-bit addsub                                          : 2
+# Registers                                            : 83
+ 1-bit register                                        : 45
+ 14-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 32-bit register                                       : 10
+ 4-bit register                                        : 8
+ 8-bit register                                        : 7
+ 9-bit register                                        : 8
+# Comparators                                          : 14
+ 13-bit comparator lessequal                           : 2
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 3
+ 5-bit comparator equal                                : 1
+ 9-bit comparator equal                                : 4
+# Multiplexers                                         : 214
+ 1-bit 2-to-1 multiplexer                              : 177
+ 1-bit 4-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 10
+ 32-bit 2-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 12
+# Tristates                                            : 4
+ 1-bit tristate buffer                                 : 4
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2404 -  FFs/Latches <OCCUPANCY_RXFIFO_REG<31:9>> (without init value) have a constant value of 0 in block <user_logic>.
+WARNING:Xst:2404 -  FFs/Latches <OCCUPANCY_TXFIFO_REG<31:9>> (without init value) have a constant value of 0 in block <user_logic>.
+WARNING:Xst:2404 -  FFs/Latches <DATA_OUT_REG<31:8>> (without init value) have a constant value of 0 in block <user_logic>.
+
+Synthesizing (advanced) Unit <slave_attachment>.
+The following registers are absorbed into counter <INCLUDE_DPHASE_TIMER.dpto_cnt>: 1 register on signal <INCLUDE_DPHASE_TIMER.dpto_cnt>.
+Unit <slave_attachment> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_fifo_receive>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <spi_fifo_receive> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_fifo_send>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <spi_fifo_send> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_sf>.
+The following registers are absorbed into counter <count_nr_bytes_read>: 1 register on signal <count_nr_bytes_read>.
+The following registers are absorbed into counter <count_nr_bytes_send>: 1 register on signal <count_nr_bytes_send>.
+Unit <spi_sf> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_tr8>.
+The following registers are absorbed into counter <count_c>: 1 register on signal <count_c>.
+The following registers are absorbed into counter <count_dummy>: 1 register on signal <count_dummy>.
+The following registers are absorbed into counter <count_send>: 1 register on signal <count_send>.
+The following registers are absorbed into counter <count_read>: 1 register on signal <count_read>.
+Unit <spi_tr8> synthesized (advanced).
+
+Synthesizing (advanced) Unit <user_logic>.
+INFO:Xst:3226 - The RAM <spi_sf_instance/spi3/Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <spi_sf_instance/data_output> <DATA_OUT_REG>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 261-word x 8-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <Bus2IP_Clk>    | rise     |
+    |     weA            | connected to signal <spi_sf_instance/spi3/writing> | high     |
+    |     addrA          | connected to signal <spi_sf_instance/spi3/wr_ptr> |          |
+    |     diA            | connected to signal <spi_sf_instance/data_in_buff_receive> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 261-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <Bus2IP_Clk>    | rise     |
+    |     enB            | connected to signal <spi_sf_instance/read_pulse_receive_buffer_empty_AND_50_o_0> | high     |
+    |     addrB          | connected to signal <spi_sf_instance/spi3/rd_ptr> |          |
+    |     doB            | connected to signal <DATA_OUT_REG>  |          |
+    |     dorstB         | connected to signal <Bus2IP_Resetn> | low      |
+    | reset value        | 00000000                                       |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <spi_sf_instance/spi2/Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <spi_sf_instance/d_in>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 261-word x 8-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <Bus2IP_Clk>    | rise     |
+    |     weA            | connected to signal <spi_sf_instance/spi2/writing> | high     |
+    |     addrA          | connected to signal <spi_sf_instance/spi2/wr_ptr> |          |
+    |     diA            | connected to signal <spi_sf_instance/data_in_buff_send> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 261-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <Bus2IP_Clk>    | rise     |
+    |     enB            | connected to signal <spi_sf_instance/rd_en_s_0> | high     |
+    |     addrB          | connected to signal <spi_sf_instance/spi2/rd_ptr> |          |
+    |     doB            | connected to signal <spi_sf_instance/d_in> |          |
+    |     dorstB         | connected to signal <RESET_REG>     | high     |
+    | reset value        | 00000000                                       |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <user_logic> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_tr8>.
+	Found 2-bit dynamic shift register for signal <dq_t_delayed<0>>.
+	Found 2-bit dynamic shift register for signal <dq_t_delayed<1>>.
+	Found 2-bit dynamic shift register for signal <dq_t_delayed<2>>.
+	Found 2-bit dynamic shift register for signal <dq_t_delayed<3>>.
+Unit <spi_tr8> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 261x8-bit dual-port block RAM                         : 2
+# Adders/Subtractors                                   : 8
+ 13-bit subtractor                                     : 1
+ 14-bit subtractor                                     : 1
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 1
+ 9-bit adder                                           : 4
+# Counters                                             : 9
+ 14-bit up counter                                     : 1
+ 4-bit down counter                                    : 2
+ 4-bit up counter                                      : 2
+ 9-bit up counter                                      : 2
+ 9-bit updown counter                                  : 2
+# Registers                                            : 376
+ Flip-Flops                                            : 376
+# Shift Registers                                      : 4
+ 2-bit dynamic shift register                          : 4
+# Comparators                                          : 14
+ 13-bit comparator lessequal                           : 2
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 3
+ 5-bit comparator equal                                : 1
+ 9-bit comparator equal                                : 4
+# Multiplexers                                         : 207
+ 1-bit 2-to-1 multiplexer                              : 174
+ 1-bit 4-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 10
+ 32-bit 2-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 4
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 12
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <STATUS_REG_29> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_28> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_27> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_26> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_25> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_24> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_23> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_22> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_21> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_20> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_19> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_18> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_17> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_16> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_15> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_14> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_13> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_12> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_11> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_10> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_9> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_8> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_7> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_6> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <STATUS_REG_5> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <s_axi_rresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_bresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/FSM_1> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 1101  | 011
+ 0100  | 010
+ 0011  | 110
+ 0010  | 111
+ 0110  | 101
+ 0111  | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/FSM_3> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 010   | 010
+ 110   | 110
+ 011   | 011
+ 001   | 001
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/FSM_2> on signal <state_clk[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 01    | 1
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/FSM_4> on signal <stare[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/FSM_5> on signal <cstate[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal <state[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ sm_idle  | 00
+ sm_read  | 01
+ sm_write | 10
+ sm_resp  | 11
+----------------------
+WARNING:Xst:2042 - Unit spi_tr8: 4 internal tristates are replaced by logic (pull-up yes): dq_o_cmb<0>, dq_o_cmb<1>, dq_o_cmb<2>, dq_o_cmb<3>.
+
+Optimizing unit <digilent_quadspi_cntlr_wrapper> ...
+
+Optimizing unit <user_logic> ...
+
+Optimizing unit <spi_tr8> ...
+
+Optimizing unit <slave_attachment> ...
+
+Optimizing unit <address_decoder> ...
+WARNING:Xst:1293 - FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <digilent_quadspi_cntlr_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_1> has a constant value of 0 in block <digilent_quadspi_cntlr_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/Mshreg_dq_t_delayed_2_0> of sequential type is unconnected in block <digilent_quadspi_cntlr_wrapper>.
+WARNING:Xst:2677 - Node <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/Mshreg_dq_t_delayed_1_0> of sequential type is unconnected in block <digilent_quadspi_cntlr_wrapper>.
+WARNING:Xst:2677 - Node <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/Mshreg_dq_t_delayed_3_0> of sequential type is unconnected in block <digilent_quadspi_cntlr_wrapper>.
+WARNING:Xst:2677 - Node <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> of sequential type is unconnected in block <digilent_quadspi_cntlr_wrapper>.
+INFO:Xst:2261 - The FF/Latch <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/start> in Unit <digilent_quadspi_cntlr_wrapper> is equivalent to the following FF/Latch, which will be removed : <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/start_mode2_div_rate2_buf> 
+INFO:Xst:2261 - The FF/Latch <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/dq_t_3> in Unit <digilent_quadspi_cntlr_wrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/dq_t_2> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/dq_t_1> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi1/dq_t_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block digilent_quadspi_cntlr_wrapper, actual ratio is 3.
+FlipFlop Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg has been replicated 2 time(s)
+FlipFlop Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4 has been replicated 1 time(s)
+FlipFlop Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5 has been replicated 1 time(s)
+FlipFlop Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_6 has been replicated 1 time(s)
+FlipFlop Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7 has been replicated 1 time(s)
+FlipFlop Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s has been replicated 5 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 432
+ Flip-Flops                                            : 432
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : digilent_quadspi_cntlr_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 758
+#      GND                         : 1
+#      INV                         : 30
+#      LUT1                        : 31
+#      LUT2                        : 31
+#      LUT3                        : 67
+#      LUT4                        : 91
+#      LUT5                        : 91
+#      LUT6                        : 232
+#      MUXCY                       : 97
+#      MUXF7                       : 9
+#      VCC                         : 1
+#      XORCY                       : 77
+# FlipFlops/Latches                : 432
+#      FD                          : 81
+#      FD_1                        : 6
+#      FDE                         : 31
+#      FDR                         : 42
+#      FDRE                        : 270
+#      FDS                         : 2
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             432  out of  54576     0%  
+ Number of Slice LUTs:                  574  out of  27288     2%  
+    Number used as Logic:               573  out of  27288     2%  
+    Number used as Memory:                1  out of   6408     0%  
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    762
+   Number with an unused Flip Flop:     330  out of    762    43%  
+   Number with an unused LUT:           188  out of    762    24%  
+   Number of fully used LUT-FF pairs:   244  out of    762    32%  
+   Number of unique control sets:        25
+
+IO Utilization: 
+ Number of IOs:                         162
+ Number of bonded IOBs:                   0  out of    218     0%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    116     0%  
+    Number using Block RAM only:          1
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                          | Load  |
+-----------------------------------+--------------------------------------------------------------------------------+-------+
+S_AXI_ACLK                         | NONE(Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_8)| 435   |
+-----------------------------------+--------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 7.097ns (Maximum Frequency: 140.911MHz)
+   Minimum input arrival time before clock: 2.677ns
+   Maximum output required time after clock: 4.540ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
+  Clock period: 7.097ns (frequency: 140.911MHz)
+  Total number of paths / destination ports: 19089 / 764
+-------------------------------------------------------------------------
+Delay:               3.548ns (Levels of Logic = 3)
+  Source:            Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_3 (FF)
+  Destination:       Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/empty (FF)
+  Source Clock:      S_AXI_ACLK falling
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_3 to Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/empty
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             2   0.447   0.617  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_3 (Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_3)
+     LUT6:I5->O            2   0.205   0.961  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/Mmux_next_rd_ptr71 (Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/next_rd_ptr<6>)
+     LUT6:I1->O            1   0.203   0.808  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/reading_full_AND_95_o1 (Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/reading_full_AND_95_o1)
+     LUT6:I3->O            1   0.205   0.000  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/empty_glue_rst (Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/empty_glue_rst)
+     FDS:D                     0.102          Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/spi2/empty
+    ----------------------------------------
+    Total                      3.548ns (1.162ns logic, 2.386ns route)
+                                       (32.7% logic, 67.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 620 / 398
+-------------------------------------------------------------------------
+Offset:              2.677ns (Levels of Logic = 1)
+  Source:            S_AXI_ARESETN (PAD)
+  Destination:       Digilent_QuadSPI_Cntlr/USER_LOGIC_I/STATUS_REG_31 (FF)
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: S_AXI_ARESETN to Digilent_QuadSPI_Cntlr/USER_LOGIC_I/STATUS_REG_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     INV:I->O            187   0.206   2.041  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/Bus2IP_Resetn_inv1_INV_0 (Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
+     FDRE:R                    0.430          Digilent_QuadSPI_Cntlr/USER_LOGIC_I/CONTROL_CYCLE_REG_0
+    ----------------------------------------
+    Total                      2.677ns (0.636ns logic, 2.041ns route)
+                                       (23.8% logic, 76.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 78 / 47
+-------------------------------------------------------------------------
+Offset:              4.540ns (Levels of Logic = 3)
+  Source:            Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (FF)
+  Destination:       S_AXI_ARREADY (PAD)
+  Source Clock:      S_AXI_ACLK rising
+
+  Data Path: Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg to S_AXI_ARREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              47   0.447   1.505  Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg)
+     LUT5:I4->O            1   0.205   0.579  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/slv_read_ack<0>_SW0 (N16)
+     MUXF7:S->O           36   0.148   1.453  Digilent_QuadSPI_Cntlr/USER_LOGIC_I/slv_read_ack<0> (Digilent_QuadSPI_Cntlr/user_IP2Bus_RdAck)
+     LUT2:I0->O            0   0.203   0.000  Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
+    ----------------------------------------
+    Total                      4.540ns (1.003ns logic, 3.537ns route)
+                                       (22.1% logic, 77.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock S_AXI_ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+S_AXI_ACLK     |    6.790|    3.548|    3.049|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.04 secs
+ 
+--> 
+
+Total memory usage is 279040 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   63 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
+

@@ -1,0 +1,15 @@
+vhdl proc_common_v3_00_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd
+vhdl proc_common_v3_00_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v3_00_a/hdl/vhdl/family_support.vhd
+vhdl proc_common_v3_00_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd
+vhdl proc_common_v3_00_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd
+verilog d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/verilog/spi_tr8.v
+verilog d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_send.v
+verilog d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/verilog/spi_fifo_receive.v
+vhdl proc_common_v3_00_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v3_00_a/hdl/vhdl/counter_f.vhd
+vhdl axi_lite_ipif_v1_01_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd
+verilog d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/verilog/spi_sf.v
+vhdl axi_lite_ipif_v1_01_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd
+vhdl d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/vhdl/user_logic.vhd
+vhdl axi_lite_ipif_v1_01_a C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd
+vhdl d_qspi_axi_v1_00_a C:\EE427\Atlys_BSB_Support_v_3_4\Atlys_AXI_BSB_Support\lib\Digilent\pcores\d_qspi_axi_v1_00_a/hdl/vhdl/d_qspi_axi.vhd
+vhdl work ../hdl/digilent_quadspi_cntlr_wrapper.vhd

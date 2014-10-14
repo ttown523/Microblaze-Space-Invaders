@@ -1,0 +1,25 @@
+/*
+ * spaceship.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: superman
+ */
+
+#ifndef SPACESHIP_H_
+#define SPACESHIP_H_
+
+#include "global.h"
+
+#define START_LEFT 5
+#define START_RIGHT 600
+
+/***********************************
+ *      Function definitions
+ ***********************************/
+void placeSpaceShip(void){
+
+}
+
+
+
+#endif /* SPACESHIP_H_ */

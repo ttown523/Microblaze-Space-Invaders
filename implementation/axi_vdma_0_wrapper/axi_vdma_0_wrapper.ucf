@@ -1,0 +1,13 @@
+NET "s_axi_lite_aclk" TNM_NET = "s_axi_lite_aclk";
+NET "m_axi_mm2s_aclk" TNM_NET = "m_axi_mm2s_aclk";
+NET "m_axis_mm2s_aclk" TNM_NET = "m_axis_mm2s_aclk";
+TIMESPEC TS_axi_vdma_0_from_s_axi_lite_aclk_to_m_axi_mm2s_aclk = FROM "s_axi_lite_aclk" TO "m_axi_mm2s_aclk" TIG;
+TIMESPEC TS_axi_vdma_0_from_m_axi_mm2s_aclk_to_s_axi_lite_aclk = FROM "m_axi_mm2s_aclk" TO "s_axi_lite_aclk" TIG;
+TIMESPEC TS_axi_vdma_0_from_s_axi_lite_aclk_to_m_axis_mm2s_aclk = FROM "s_axi_lite_aclk" TO "m_axis_mm2s_aclk" TIG;
+TIMESPEC TS_axi_vdma_0_from_m_axis_mm2s_aclk_to_s_axi_lite_aclk = FROM "m_axis_mm2s_aclk" TO "s_axi_lite_aclk" TIG;
+TIMESPEC TS_axi_vdma_0_from_m_axi_mm2s_aclk_to_m_axis_mm2s_aclk = FROM "m_axi_mm2s_aclk" TO "m_axis_mm2s_aclk" TIG;
+TIMESPEC TS_axi_vdma_0_from_m_axis_mm2s_aclk_to_m_axi_mm2s_aclk = FROM "m_axis_mm2s_aclk" TO "m_axi_mm2s_aclk" TIG;
+#
+#
+
+

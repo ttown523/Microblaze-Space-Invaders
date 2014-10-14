@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Xst" num="0" delta="new" >Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 260: Assignment to <arg fmt="%s" index="1">net_gnd0</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 264: Assignment to <arg fmt="%s" index="1">net_vdd0</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 361: Assignment to <arg fmt="%s" index="1">sig_pll0_clkout0_buf</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 367: Assignment to <arg fmt="%s" index="1">sig_pll0_clkout1_buf</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 383: Assignment to <arg fmt="%s" index="1">sig_pll0_clkout3_buf</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 389: Assignment to <arg fmt="%s" index="1">sig_pll0_clkout4_buf</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:/EE427/SpaceInvaderTestHW2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 395: Assignment to <arg fmt="%s" index="1">sig_pll0_clkout5_buf</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">CLKFBIN</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">PSCLK</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">PSEN</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">PSINCDEC</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKFBDCM</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUT3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUT4</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUT5</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM0</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM4</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/ee427/spaceinvadertesthw2/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd</arg>&quot; line <arg fmt="%s" index="2">279</arg>: Output port &lt;<arg fmt="%s" index="3">CLKOUTDCM5</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLL0_INST</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+</messages>
+

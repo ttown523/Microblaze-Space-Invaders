@@ -1,0 +1,10 @@
+# Output products list for <chipscope_icon_0>
+chipscope_icon_0.asy
+chipscope_icon_0.ejp
+chipscope_icon_0.gise
+chipscope_icon_0.ngc
+chipscope_icon_0.xco
+chipscope_icon_0.xise
+chipscope_icon_0_flist.txt
+chipscope_icon_0_readme.txt
+chipscope_icon_0_xmdf.tcl

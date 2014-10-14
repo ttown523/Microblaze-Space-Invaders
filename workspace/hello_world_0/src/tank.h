@@ -1,0 +1,60 @@
+/*
+ * tank.h
+ *
+ *  Created on: Oct 1, 2014
+ *      Author: superman
+ */
+
+#ifndef TANK_H_
+#define TANK_H_
+
+#include "global.h"
+#include "xbasic_types.h"
+
+/***********************************
+ *		  Tank Macros
+ **********************************/
+#define TANK_ROW 430
+#define TANK_HEIGHT 16
+#define TANK_WIDTH 30
+#define TANK_BULLET_WIDTH 2
+#define BULLET_HEIGHT 10
+#define TANK_MOVE_AMOUNT 5
+#define BULLET_MOVE_AMOUNT 3
+#define OFFSCREEN 15
+#define MAX_TANK_LIVES 8
+#define TANK_START_POS 108
+
+/***********************************
+ *		  Struct Definitions
+ **********************************/
+typedef struct {
+	pos_t position;
+	unsigned short tankPosition;
+	pos_t tankBulletPos;
+}Tank;
+
+/***********************************
+ *	  Tank function definitions
+ **********************************/
+void resetTank (void);
+void drawTank(void);
+void drawTankLife(u8 num);
+void eraseTankLife(u8 num);
+void initTankPos(void);
+void moveTankRight(void);
+void moveTankLeft(void);
+void killTank(void);
+void addTankLife(void);
+
+
+/******************************************
+ *	  Tank bullet function definitions
+ ******************************************/
+void launchTankBullet(void);
+void moveTankBullet(void);
+void drawTankBullet(void);
+void animateTank(void);
+Boolean checkBulletCollision(void);
+
+#endif /* TANK_H_ */

@@ -1,0 +1,3 @@
+vhdl fit_timer_v1_01_b C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\fit_timer_v1_01_b/hdl/vhdl/divide_part.vhd
+vhdl fit_timer_v1_01_b C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\fit_timer_v1_01_b/hdl/vhdl/fit_timer.vhd
+vhdl work ../hdl/fit_timer_0_wrapper.vhd

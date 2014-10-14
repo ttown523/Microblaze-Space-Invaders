@@ -1,0 +1,8 @@
+-batch 
+-create ac97_427 
+-ver 1.00.a 
+-dir "C:\Users\joshuas2\Desktop\427" 
+-lang vhdl 
+-bus axi4lite s 
+-reg 1 
+-xps 

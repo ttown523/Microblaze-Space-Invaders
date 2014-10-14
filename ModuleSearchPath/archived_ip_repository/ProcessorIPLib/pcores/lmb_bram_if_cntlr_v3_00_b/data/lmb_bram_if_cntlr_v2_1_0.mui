@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+###############################################################################
+##
+## (c) Copyright [2002] - [2011] Xilinx, Inc. All rights reserved.
+## 
+## This file contains confidential and proprietary information
+## of Xilinx, Inc. and is protected under U.S. and 
+## international copyright and other intellectual property
+## laws.
+## 
+## DISCLAIMER
+## This disclaimer is not a license and does not grant any
+## rights to the materials distributed herewith. Except as
+## otherwise provided in a valid license issued to you by
+## Xilinx, and to the maximum extent permitted by applicable
+## law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+## WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+## AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+## BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+## INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+## (2) Xilinx shall not be liable (whether in contract or tort,
+## including negligence, or under any other theory of
+## liability) for any loss or damage of any kind or nature
+## related to, arising under or in connection with these
+## materials, including for any direct, or any indirect,
+## special, incidental, or consequential loss or damage
+## (including loss of data, profits, goodwill, or any type of
+## loss or damage suffered as a result of any action brought
+## by a third party) even if such damage or loss was
+## reasonably foreseeable or Xilinx had been advised of the
+## possibility of the same.
+## 
+## CRITICAL APPLICATIONS
+## Xilinx products are not designed or intended to be fail-
+## safe, or for use in any application requiring fail-safe
+## performance, such as life-support or safety devices or
+## systems, Class III medical devices, nuclear facilities,
+## applications related to the deployment of airbags, or any
+## other applications that could lead to death, personal
+## injury, or severe property or environmental damage
+## (individually and collectively, "Critical
+## Applications"). Customer assumes the sole risk and
+## liability of any use of Xilinx products in Critical
+## Applications, subject only to applicable laws and
+## regulations governing limitations on product liability.
+## 
+## THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+## PART OF THIS FILE AT ALL TIMES
+##
+########################################################################
+-->
+
+<!DOCTYPE doc SYSTEM "../../ipdialog.dtd" [
+	<!ENTITY C_BASEADDR '
+	<widget id="C_BASEADDR">
+		<key>C_BASEADDR</key>
+		<label>LMB BRAM Base Address</label>
+		<tip><![CDATA[This address specifies where the LMB BRAM controller&apos;s address space starts.  If this controller is where a MicroBlaze is booting from this should be set to 0x00000000.  By default this value is larger than the high address so that an error will be generated if this value is not specified.  If Base System Builder is used an address is automatically assigned.]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_HIGHADDR '
+	<widget id="C_HIGHADDR">
+		<key>C_HIGHADDR</key>
+		<label>LMB BRAM High Address</label>
+		<tip><![CDATA[This address specifies where the LMB BRAM controller&apos;s address space ends.  If this controller is where a PowerPC is booting from this should be set to 0xFFFFFFFF.  By default this value is smaller than the base address so that an error will be generated if this value is not specified.  If Base System Builder is used an address is automatically assigned.]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_MASK '
+	<widget id="C_MASK">
+		<key>C_MASK</key>
+		<label>LMB Address Decode Mask</label>
+		<tip><![CDATA[The Embedded Development Kit (EDK) automatically sets this value to the mask of bits used to decode this peripheral on the LMB.  Any bits that are set to &apos;1&apos; in the mask indicate that the address bit in that position is used to decode a valid LMB access.  All other bits are considered don&apos;t cares for the purpose of decoding LMB accesses.  Consult the Platform Generator tool documentation for more information.]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_LMB_AWIDTH '
+	<widget id="C_LMB_AWIDTH">
+		<key>C_LMB_AWIDTH</key>
+		<label>LMB Address Bus Width </label>
+		<tip><![CDATA[This parameter sets the LMB address width.  The only supported value is 32.]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_LMB_DWIDTH '
+	<widget id="C_LMB_DWIDTH">
+		<key>C_LMB_DWIDTH</key>
+		<label>LMB Data Bus Width </label>
+		<tip><![CDATA[This parameter sets the LMB data width.  The only supported value is 32.]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_ECC '
+	<widget id="C_ECC">
+		<key>C_ECC</key>
+		<label>Error Correction Code </label>
+		<tip><![CDATA[This parameter enables Error Correction Codes to correct single bit errors and detect double bit errors in the BRAM]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_INTERCONNECT '
+	<widget id="C_INTERCONNECT">
+		<key>C_INTERCONNECT</key>
+		<label>Select Interconnect </label>
+		<tip><![CDATA[This parameter selects interface type for ECC register accesses. None = 0, PLBv46 = 1 and AXI4-Lite = 2]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_FAULT_INJECT '
+	<widget id="C_FAULT_INJECT">
+		<key>C_FAULT_INJECT</key>
+		<label>Fault Inject Registers </label>
+		<tip><![CDATA[This parameter enables Fault Inject registers to inject errors when writing to the BRAM]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_CE_FAILING_REGISTERS '
+	<widget id="C_CE_FAILING_REGISTERS">
+		<key>C_CE_FAILING_REGISTERS</key>
+		<label>Correctable Error First Failing Register </label>
+		<tip><![CDATA[This parameter enables first failing register to store address and data for a correctable error]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_UE_FAILING_REGISTERS '
+	<widget id="C_UE_FAILING_REGISTERS">
+		<key>C_UE_FAILING_REGISTERS</key>
+		<label>Uncorrectable Error First Failing Register </label>
+		<tip><![CDATA[This parameter enables first failing register to store address and data for a uncorrectable error]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_ECC_STATUS_REGISTERS '
+	<widget id="C_ECC_STATUS_REGISTERS">
+		<key>C_ECC_STATUS_REGISTERS</key>
+		<label>ECC Status and Control Register </label>
+		<tip><![CDATA[This parameter enables ECC Status and Control Register to control status and interrupt generation]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_ECC_ONOFF_REGISTER '
+	<widget id="C_ECC_ONOFF_REGISTER">
+		<key>C_ECC_ONOFF_REGISTER</key>
+		<label>ECC On/Off Register </label>
+		<tip><![CDATA[This parameter enables ECC On/Off Register to enable ECC checking being switched on/off]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_ECC_ONOFF_RESET_VALUE '
+	<widget id="C_ECC_ONOFF_RESET_VALUE">
+		<key>C_ECC_ONOFF_RESET_VALUE</key>
+		<label>ECC On/Off Reset Value </label>
+		<tip><![CDATA[This parameter sets the reset value for the ECC On/Off Register]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_CE_COUNTER_WIDTH '
+	<widget id="C_CE_COUNTER_WIDTH">
+		<key>C_CE_COUNTER_WIDTH</key>
+		<label>Correctable Error Counter Register Width</label>
+		<tip><![CDATA[This parameter implements a Correctable Error Counter Register to count occurances of correctable errors]]></tip>
+	</widget>
+	'>
+	<!ENTITY C_WRITE_ACCESS '
+	<widget id="C_WRITE_ACCESS">
+		<key>C_WRITE_ACCESS</key>
+		<label>Write Access setting </label>
+		<tip><![CDATA[This parameter define the type of write accesses that will be used]]></tip>
+	</widget>
+	'>
+        <!ENTITY C_SPLB_CTRL_BASEADDR '
+	<widget id="C_SPLB_CTRL_BASEADDR">
+		<key>C_SPLB_CTRL_BASEADDR</key>
+		<label>Base Address for PLB Interface</label>
+        <tip></tip>
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_HIGHADDR '
+	<widget id="C_SPLB_CTRL_HIGHADDR">
+		<key>C_SPLB_CTRL_HIGHADDR</key>
+		<label>High Address for PLB Interface</label>
+        <tip></tip>
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_AWIDTH '
+    	<widget id="C_SPLB_CTRL_AWIDTH">
+		<key>C_SPLB_CTRL_AWIDTH</key>
+		<label>PLB Address Bus Width</label>
+         <tip></tip>
+	    </widget>
+         '>
+        <!ENTITY C_SPLB_CTRL_DWIDTH '
+	<widget id="C_SPLB_CTRL_DWIDTH">
+		<key>C_SPLB_CTRL_DWIDTH</key>
+		<label>PLB Data Bus Width</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_P2P '
+	<widget id="C_SPLB_CTRL_P2P">
+		<key>C_SPLB_CTRL_P2P</key>
+		<label>PLB Slave Uses P2P Topology</label>
+        <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_MID_WIDTH '
+	<widget id="C_SPLB_CTRL_MID_WIDTH">
+		<key>C_SPLB_CTRL_MID_WIDTH</key>
+		<label>Master ID Bus Width of PLB</label>
+        <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_NUM_MASTERS '
+	<widget id="C_SPLB_CTRL_NUM_MASTERS">
+		<key>C_SPLB_CTRL_NUM_MASTERS</key>
+		<label>Number of PLB Masters</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_SUPPORT_BURSTS '
+	<widget id="C_SPLB_CTRL_SUPPORT_BURSTS">
+		<key>C_SPLB_CTRL_SUPPORT_BURSTS</key>
+		<label>PLB Slave is Capable of Bursts</label>
+        <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_NATIVE_DWIDTH '
+	<widget id="C_SPLB_CTRL_NATIVE_DWIDTH">
+		<key>C_SPLB_CTRL_NATIVE_DWIDTH</key>
+		<label>Native Data Bus Width of PLB Slave</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_SPLB_CTRL_CLK_FREQ_HZ '
+	<widget id="C_SPLB_CTRL_CLK_FREQ_HZ">
+		<key>C_SPLB_CTRL_CLK_FREQ_HZ</key>
+		<label>Frequency of PLB Slave</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_ACLK_FREQ_HZ '
+	<widget id="C_S_AXI_CTRL_ACLK_FREQ_HZ">
+		<key>C_S_AXI_CTRL_ACLK_FREQ_HZ</key>
+		<label>S_AXI_CTRL Clock Frequency</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_BASEADDR '
+	<widget id="C_S_AXI_CTRL_BASEADDR">
+		<key>C_S_AXI_CTRL_BASEADDR</key>
+		<label>S_AXI_CTRL Base Address</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_HIGHADDR '
+	<widget id="C_S_AXI_CTRL_HIGHADDR">
+		<key>C_S_AXI_CTRL_HIGHADDR</key>
+		<label>S_AXI_CTRL High Address</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_DATA_WIDTH '
+	<widget id="C_S_AXI_CTRL_DATA_WIDTH">
+		<key>C_S_AXI_CTRL_DATA_WIDTH</key>
+		<label>S_AXI_CTRL Data Width</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_ADDR_WIDTH '
+	<widget id="C_S_AXI_CTRL_ADDR_WIDTH">
+		<key>C_S_AXI_CTRL_ADDR_WIDTH</key>
+		<label>S_AXI_CTRL Address Width</label>
+         <tip></tip>	
+	</widget>
+        '>
+        <!ENTITY C_S_AXI_CTRL_PROTOCOL '
+	<widget id="C_S_AXI_CTRL_PROTOCOL">
+		<key>C_S_AXI_CTRL_PROTOCOL</key>
+		<label>S_AXI_CTRL Protocol</label>
+         <tip></tip>	
+	</widget>
+        '>
+]>
+
+<doc>
+	<!--
+	<view id="User">
+		<display>User</display>
+		<group id="All">
+			<display>All</display>
+		</group>
+	</view>
+	-->
+	<view id="System">
+		<display>System</display>
+		<group id="Addresses">
+			<display>Addresses</display>
+			<item>&C_BASEADDR;</item>
+			<item>&C_HIGHADDR;</item>
+			<item>&C_MASK;</item>
+        </group>
+		<group id="LMB">
+			<display>LMB</display>
+			<item>&C_LMB_AWIDTH;</item>
+			<item>&C_LMB_DWIDTH;</item>
+		</group>
+		<group id="ECC">
+			<display>ECC</display>
+			<item>&C_ECC;</item>
+			<item>&C_INTERCONNECT;</item>
+			<item>&C_FAULT_INJECT;</item>
+			<item>&C_CE_FAILING_REGISTERS;</item>
+			<item>&C_UE_FAILING_REGISTERS;</item>
+			<item>&C_ECC_STATUS_REGISTERS;</item>
+			<item>&C_ECC_ONOFF_REGISTER;</item>
+			<item>&C_ECC_ONOFF_RESET_VALUE;</item>
+			<item>&C_CE_COUNTER_WIDTH;</item>
+			<item>&C_WRITE_ACCESS;</item>
+		</group>
+                <group id="SPLB_CTRL">
+                        <display>SPLB_CTRL</display>
+                        <item>&C_SPLB_CTRL_BASEADDR;</item>
+                        <item>&C_SPLB_CTRL_HIGHADDR;</item>
+                        <item>&C_SPLB_CTRL_AWIDTH;</item>
+                        <item>&C_SPLB_CTRL_DWIDTH;</item>
+                        <item>&C_SPLB_CTRL_P2P;</item>
+                        <item>&C_SPLB_CTRL_MID_WIDTH;</item>
+                        <item>&C_SPLB_CTRL_NUM_MASTERS;</item>
+                        <item>&C_SPLB_CTRL_SUPPORT_BURSTS;</item>
+                        <item>&C_SPLB_CTRL_NATIVE_DWIDTH;</item>
+                        <item>&C_SPLB_CTRL_CLK_FREQ_HZ;</item>
+                </group>
+                <group id="S_AXI_CTRL">
+                        <display>S_AXI_CTRL</display>
+                        <item>&C_S_AXI_CTRL_ACLK_FREQ_HZ;</item>
+                        <item>&C_S_AXI_CTRL_BASEADDR;</item>
+                        <item>&C_S_AXI_CTRL_HIGHADDR;</item>
+                        <item>&C_S_AXI_CTRL_DATA_WIDTH;</item>
+                        <item>&C_S_AXI_CTRL_ADDR_WIDTH;</item>
+                        <item>&C_S_AXI_CTRL_PROTOCOL;</item>
+                </group>
+ 	</view>
+</doc>
+

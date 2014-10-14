@@ -1,0 +1,206 @@
+<html>
+<head>
+	<title>
+Change log for mdm, 2.00.b
+	</title>
+	<meta cvs_header="$Id: change_log_handwritten.html,v 1.1.2.2 2010/11/23 07:48:01 stefana Exp $">
+	<link href="../../../../../../doc/usenglish/css/xilhtml.css" rel="stylesheet" type="text/css">
+	<style>
+		P.Level1Heading {
+			color: #000000;
+			font-weight: bold;
+			font-size: 1.05em;
+			margin-bottom: 0em;
+			margin-top: 0em;
+		}
+		P.Level2Heading  {
+			font-weight: bold;
+			margin-top: 2em;
+			margin-bottom: 0em;
+		}
+		P.Level3Heading {
+			font-weight: bold;
+			margin-top: 2em;
+		}
+		.GreyBackground {
+			background-color:#CCCCCC;
+		}
+		.PreformatFont  {
+			font-family: Fixed, Mono, Courier New, Courier;
+			font-size: .95em;
+		}
+	</style>
+</head>
+<body>
+	<h3 class="PageHeader">Xilinx Processor IP Library</h3>
+	<h1>
+Change log for mdm, 2.00.b
+	</h1>
+	<hr class="whs1">
+
+<!CORE-CHANGE-DATA>
+<!bgn-change-data-table>
+<!--@BEGIN_CHANGELOG SUMMARY CORE_NAME=mdm_v2_00_b STATE=ACTIVE -->
+<!--@END_CHANGELOG -->
+<table cellpadding="1" cellspacing="0" border="0"
+	style="text-align: left; vertical-align: top;"
+>
+	<tbody>
+
+		<!spacer><tr><td><p><br></p></td></tr>
+		<tr>
+			<td class="GreyBackground">
+				<p class="Level1Heading">
+Changes in 2.00.b released in 13.2
+				</p>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="Level2Heading">
+13.2 - Changes in Tcl script files associated with core (.tcl)
+				</p>
+				<hr class="whs1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+<!--@BEGIN_CHANGELOG EDK_O CORE_NAME=mdm_v2_00_b TYPE=mpd --><pre>
+Added DRC to disallow use of PLBv46 with 7-Series or later target architectures
+<!--@END_CHANGELOG --></pre>
+			</td>
+		</tr>
+
+		<!spacer><tr><td><p><br></p></td></tr>
+		<tr>
+			<td class="GreyBackground">
+				<p class="Level1Heading">
+Changes in 2.00.b released in 13.1
+				</p>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="Level2Heading">
+13.1 - Changes in new revision
+				</p>
+				<hr class="whs1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+<!--@BEGIN_CHANGELOG EDK_O CORE_NAME=mdm_v2_00_b TYPE=mpd --><pre>
+Change to use AXI IPIF v1.01.a
+Use AXI interconnect as default for new instances from 7 series target architectures
+<!--@END_CHANGELOG --></pre>
+			</td>
+		</tr>
+		<!spacer><tr><td><p><br></p></td></tr>
+		<tr>
+			<td class="GreyBackground">
+				<p class="Level1Heading">
+Changes in 2.00.a released in 12.2
+				</p>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="Level2Heading">
+12.2 - Changes in new major version
+				</p>
+				<hr class="whs1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+<!--@BEGIN_CHANGELOG EDK_MS2 CORE_NAME=mdm_v2_00_a TYPE=mpd --><pre>
+Add AXI interface
+Remove OPB and FSL interfaces
+Add non-buffered mode in UART
+Remove UART_WIDTH parameter
+<!--@END_CHANGELOG --></pre>
+			</td>
+		</tr>
+    <!spacer><tr><td><p><br></p></td></tr>
+		<tr>
+			<td class="GreyBackground">
+				<p class="Level1Heading">
+Changes in 1.00.g released in 11.4
+				</p>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="Level2Heading">
+11.4 - Changes in VHDL/Verilog/Netlist sources (.vhd, .v, .ngc, .edn)
+				</p>
+				<hr class="whs1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+<!--@BEGIN_CHANGELOG EDK_LS4 CORE_NAME=mdm_v1_00_g TYPE=mpd --><pre>
+Insert LUTs as delay elements for delay sel_n signal to account for long skew in the Update signal
+<!--@END_CHANGELOG --></pre>
+			</td>
+		</tr>
+    <!spacer><tr><td><p><br></p></td></tr>
+    <tr>
+      <td class="GreyBackground">
+        <p class="Level1Heading">
+Changes in 11.3
+        </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="Level2Heading">
+11.3 - Changes in tool interface files (.mpd)
+        </p>
+        <hr class="whs1">
+      </td>
+    </tr>
+    <tr>
+      <td>
+<!--@BEGIN_CHANGELOG EDK_LS3 CORE_NAME=mdm_v1_00_f TYPE=mpd --><pre>
+Added early access support for virtex6cx.
+<!--@END_CHANGELOG --></pre>
+      </td>
+    </tr>
+		<!spacer><tr><td><p><br></p></td></tr>
+		<tr>
+			<td class="GreyBackground">
+				<p class="Level1Heading">
+Changes in 11.2
+				</p>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="Level2Heading">
+11.2 - Changes in tool interface files (.mpd)
+				</p>
+				<hr class="whs1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+<!--@BEGIN_CHANGELOG EDK_LS2 CORE_NAME=mdm_v1_00_f STATE=ACTIVE TYPE=mpd --><pre>
+<!--@END_CHANGELOG --></pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!end-change-data-table>
+
+	<p class="Copyright">
+	Copyright &copy; 1995-2009 Xilinx, Inc. All rights reserved.
+	</p>
+</body>
+</html>
