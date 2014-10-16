@@ -10,9 +10,13 @@
 #include "tank.h"
 
 static Aliens aliens;
+
+/*Alien explosion variables*/
 static pos_t alienExplosionPos;
-unsigned alienSpeed;
 Boolean alienExplosionInProgress;
+
+/*Alien animation timers*/
+unsigned alienSpeed;
 unsigned alienFireRate;
 
 /***************************
@@ -183,6 +187,7 @@ void initAliens(void){
 	aliens.killCount = 0;
 	aliens.bottomRowPos = aliens.position.x + (ALIEN_HEIGHT * 5) + (4*ALIEN_VERTICAL_SPACING);
 
+	//make each alien alive
 	for (i = 0;  i < 55; i++){
 		aliens.alive[i] = T;
 	}
@@ -194,19 +199,15 @@ void initAliens(void){
 
 	alienExplosionPos.x = 0;
 	alienExplosionPos.y = 0;
-	alienSpeed = 53;
+	alienSpeed = 53;  //initialize alien speed
 	alienExplosionInProgress = F;
-	alienFireRate = 200;
+	alienFireRate = 200; //initial alien fire rate
 }
 
 /**
  * drawAliens:
  * -----------
  * Writes the alien block to the frame buffer
- *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: only draw aliens if they are on screen!
  */
 void drawAliens(void){
 	unsigned short row=0, col=0, x = aliens.position.x, y = aliens.position.y, alienWidth = TOP_ALIEN_WIDTH;
@@ -256,18 +257,25 @@ void drawAliens(void){
 }
 
 /**
+ *	deleteAlienPart:
+ *	---------------
+ *	Deletes the part of the alien that is no longer valid once it has moved
  *
+ *	Parameters:
+ *		x - new row position of the alien
+ *		y - new column position of the alien
+ *		alienWidth - Width of the alien to delete
  */
 void deleteAlienPart(int x, int y, int alienWidth){
 	int row, col;
 	if (aliens.movingDown == F) {
 		switch (aliens.moveDir){
-		case RIGHT:
+		case RIGHT://erase to the left of the alien
 			for(row = x; row < x + ALIEN_HEIGHT ; row++)
 				for (col = y - HORIZONTAL_MOVE; col < y; col++)
 					 framePointer0[row*640 + col] = BLACK ;
 			break;
-		case LEFT:
+		case LEFT://erase to the right of the alien
 			for(row = x ; row < x + ALIEN_HEIGHT; row++)
 				for (col = y + alienWidth; col < y + alienWidth + HORIZONTAL_MOVE ; col++)
 					 framePointer0[row*640 + col] = BLACK ;
@@ -276,7 +284,7 @@ void deleteAlienPart(int x, int y, int alienWidth){
 			break;
 		}
 	}
-	else {//the aliens moved down
+	else {//the aliens moved down...erase the top of the alien
 		for(row = x - (( x-aliens.position.x < 16) ? VERTICAL_MOVE : ALIEN_VERTICAL_SPACING) ; row < x; row++)
 			for (col = y; col < y + alienWidth; col++)
 				 framePointer0[row*640 + col] = BLACK ;
@@ -290,16 +298,15 @@ void deleteAlienPart(int x, int y, int alienWidth){
  */
 void moveAliens(void){
 
-	if (aliens.movingDown == T){
+	if (aliens.movingDown == T){ //move the aliens down
 
 		aliens.position.x += VERTICAL_MOVE;
-		aliens.moveDir = !aliens.moveDir; //try this first, else use this...(aliens.moveDir== RIGHT) ? LEFT : RIGHT;
+		aliens.moveDir = !aliens.moveDir; //change the alien move direction
 
-		if ( (alienSpeed -= SPEED_UP_AMOUNT) < MAX_ALIEN_SPEED)
+		if ( (alienSpeed -= SPEED_UP_AMOUNT) < MAX_ALIEN_SPEED) //update the alien speed
 			alienSpeed = MAX_ALIEN_SPEED;
 
-		//alternative...create a lowest alien position in the aliens struct and increment it during kill alien
-		//if (aliens.position.x + ALIEN_HEIGHT + aliens.rows*(ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING) > BELOW_THE_BUNKERS)
+		//check to see if we have reached below the bunkers
 		aliens.bottomRowPos += VERTICAL_MOVE;
 		if(aliens.bottomRowPos > BELOW_THE_BUNKERS)
 			gameEnded();
@@ -322,6 +329,7 @@ void killAlien(int index){
 
 	aliens.alive[index] = F;
 
+	//if 55 aliens have been killed, start the next level
 	if (++aliens.killCount == 55){
 		addTankLife();
 		gameEnded(); //this will be changed once levels are implemented
@@ -329,7 +337,7 @@ void killAlien(int index){
 		//reset alien block slightly lower
 	}
 
-	if ((alienFireRate - 5) >MAX_BULLET_RATE)
+	if ((alienFireRate - 5) >MAX_BULLET_RATE) //increase the alien fire rate
 		alienFireRate -= 5;
 
 	col = index % 11;
@@ -366,10 +374,11 @@ void drawAlienExplosion(unsigned short row, unsigned short col) {
 
 	int i, j;
 
-	//draw an alien explosion at the new location
+	//calculate the alien explosion position
 	alienExplosionPos.y = aliens.position.y  + col*ALIEN_WIDTH;
 	alienExplosionPos.x = aliens.position.x + row*(ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING);
 
+	//draw an alien explosion at the new location
 	for (row = alienExplosionPos.x, i = 0 ; row < alienExplosionPos.x + ALIEN_HEIGHT ; row++, i++)
 		for (col = alienExplosionPos.y, j = 0; col < alienExplosionPos.y + EXPLOSION_WIDTH ; col++, j++)
 			framePointer0[row*640 + col] = alienExplosion[i] & (1 << j) ? OFF_WHITE : BLACK;
@@ -380,7 +389,7 @@ void drawAlienExplosion(unsigned short row, unsigned short col) {
 /**
  *  eraseAlienExplosion
  *  -------------------
- *
+ *	Erase the alien explosion
  */
 void eraseAlienExplosion(void){
 	int i, j, row, col;
@@ -389,6 +398,7 @@ void eraseAlienExplosion(void){
 		for (col = alienExplosionPos.y, j = 0; col < alienExplosionPos.y + EXPLOSION_WIDTH ; col++, j++)
 			framePointer0[row*640 + col] = BLACK;
 
+	//reset explosion variables
 	alienExplosionPos.x = 0;
 	alienExplosionPos.y = 0;
 	alienExplosionInProgress = F;
@@ -399,33 +409,37 @@ void eraseAlienExplosion(void){
  * -----------------
  * Chooses a random alien on the bottom row, and places a bullet directly under him
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: check to see if the alien kill count is less than the max before launching a bullet
  */
 void launchAlienBullet(void) {
 	u8 bulletNum = getFirstAvailableBullet();
 
-	if(bulletNum == 4) //no bullets are available
+	if(bulletNum == 4) //no bullets are available, so return
 		return;
 
 	int col = getRandomNumber() % 11, row, startX, startY;
 
-	while(aliens.lowestAlien[col] < 0)  //may change this to not call rand so often
+	//keep getting a column until one is found
+	while(aliens.lowestAlien[col] < 0)
 		col = getRandomNumber() % 11;
 
-	//calculate the position of the lowest alien in that column...update this
+	//calculate the position of the lowest alien in that column
 	row = aliens.lowestAlien[col] / 11;
 	startX = aliens.position.x + (row* (ALIEN_HEIGHT + ALIEN_VERTICAL_SPACING)) + ALIEN_HEIGHT;
 	startY = aliens.position.y + (col * ALIEN_WIDTH) + (ALIEN_HALF_WIDTH);
 
+	//if the bullet is launched into the bunker, don't display it
 	if ( launchedIntoBunker (startX, startY) == F )
 		placeAlienBullet(bulletNum, startX, startY, (getRandomNumber()%2) ? T : F );
 }
 
-
 /**
+*	getAlienIndex:
+*	--------------
+*	Returns the alien index of the specified row and column value
 *
+*	Parameters:
+*		x - row pixel on the screen
+*		y - column pixel on the screen
 */
 unsigned short getAlienIndex(unsigned short x, unsigned short y){
 	unsigned short row, col, visibleAlienBlock;

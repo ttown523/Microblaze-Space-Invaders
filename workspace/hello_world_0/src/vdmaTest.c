@@ -55,50 +55,62 @@ u32 buttonState;
 /**************************************************
  * 	 Timers for each moving part on the screen
  **************************************************/
+/*Alien block variables*/
 unsigned alienTimer = 0;
 extern unsigned alienSpeed;
 Boolean moveAlienBlock = F;
 
+/*Tank move variables*/
 unsigned tankTimer = 0;
 #define MOVE_TANK 4
 Boolean moveTank = F;
 
+/*Tank bullet animation variables*/
 unsigned tankBulletTimer = 0;
 #define MOVE_TANK_BULLETS 1
 Boolean updateTankBullet = F;
 
+/*Move Alien Bullet animation variables*/
 unsigned alienBulletTimer = 0;
 #define MOVE_ALIEN_BULLETS 4
 Boolean updateAlienBullets = F;
 
+/*Launch alien bullet animation variables*/
 unsigned launchAlienBulletTimer = 0;
 extern unsigned alienFireRate;//#define LAUNCH_ALIEN_BULLET 75//200
 Boolean fireAlienBullet = F;
 
+/*Tank animation variables*/
 unsigned tankAnimationTimer = 0;
 #define ANIMATE_TANK 10
 extern Boolean tankIsDead;
 Boolean shouldAnimateTank = F;
 u8 tankAnimationCount = 0;
 
+/*Spaceship animation variables*/
 unsigned spaceshipTimer = 0;
 extern unsigned spaceshipTimerExpired;
 Boolean takeSpaceshipAction = F;
 
+/*Alien explosion variables*/
 unsigned alienExplosionTimer = 0;
 #define ALIEN_EXPLOSION_DONE 6
 extern Boolean alienExplosionInProgress;
 Boolean shouldEraseAlienExplosion = F;
 
+/*Game over flag*/
 extern Boolean gameOver;
 
 
 /**
- *
+ *	timer_interrupt_handler:
+ *	------------------------
+ *	This function increments each timer above.
+ *	If it expired, set the flag associated with the action to be True;
  */
 void timer_interrupt_handler() {
 
-	if(tankIsDead == F) {
+	if(tankIsDead == F) { //freeze everything mid tank animation
 		if(++alienTimer == alienSpeed)
 			moveAlienBlock = T;
 		if(++tankTimer == MOVE_TANK){
@@ -227,9 +239,9 @@ int main()
     	 xil_printf("vdma parking failed\n\r");
      }
 
-     /****
-      * Initialize GPIO, FIT, and INTC
-      */
+     /*******************************************
+      * 	Initialize GPIO, FIT, and INTC
+      *******************************************/
 
      Status = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
      // Set the push button peripheral to be inputs.
@@ -250,13 +262,9 @@ int main()
 
 	microblaze_enable_interrupts();
 
-     /*********************
-      * Test Code
-      **********************/
-//     u8 d10;
-//	 u8 d1;
-
-     //Code to test our render functions
+     /**********************************
+      * 	Main Game Loop
+      **********************************/
      while (1) {
 
     	 if (gameOver == T) {
@@ -334,48 +342,6 @@ int main()
 				 }
 			 }
     	 }
-
-
-//    	 u8 test = XUartLite_RecvByte(XPAR_UARTLITE_1_BASEADDR) - 48 ;
-//
-//    	 switch(test){
-//    	 case 0:
-//    		 d10 = XUartLite_RecvByte(XPAR_UARTLITE_1_BASEADDR) - 48;
-//    		 d1 = XUartLite_RecvByte(XPAR_UARTLITE_1_BASEADDR) - 48;
-//    		 killAlien(10*d10 + d1);
-//    		 break;
-//    	 case 1:
-//    	 	 moveSpaceship();
-//			 break;
-//    	 case 2:
-//    		 placeSpaceship();
-//			 break;
-//    	 case 3:
-//    		 launchAlienBullet();
-//			 break;
-//    	 case 4:
-//    		 moveTankLeft();
-//			 break;
-//    	 case 5:
-//    		 launchTankBullet();
-//			 break;
-//    	 case 6:
-//    		 moveTankRight();
-//			 break;
-//    	 case 7:
-//    		 animateTank();
-//    		 break;
-//    	 case 8:
-//    		 moveAliens();
-//			 drawAliens();
-//			 break;
-//    	 case 9:
-//    		 moveAlienBullets();
-//    		 moveTankBullet();
-//    		 break;
-//    	 default:
-//    		 break;
-//    	 }
     }
      cleanup_platform();
 

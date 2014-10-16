@@ -8,16 +8,21 @@
 #include "spaceship.h"
 #include "charGen.h"
 
+//Spaceship attributes
 static Direction moveDir;
 static unsigned yPos;
-static unsigned randomScore[7] = {
-		50, 100, 150, 200, 250, 300, 350,
-};
 
+//Spaceship animation variables
 static u8 animationState = 0;
 static unsigned currentBonus = 0;
 unsigned spaceshipTimerExpired = SHOW_SPACESHIP;
 
+//Score look up table
+static unsigned randomScore[7] = {
+		50, 100, 150, 200, 250, 300, 350,
+};
+
+//Spaceship bitmap
 const int alienSpaceship[SPACESHIP_HEIGHT] = {
 	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0),
 	packWord32(0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0),
@@ -37,18 +42,22 @@ const int alienSpaceship[SPACESHIP_HEIGHT] = {
 
 
 /**
- *
+ *	placeSpaceship:
+ *	---------------
+ *	Initializes the spaceship on the screen
  */
 void placeSpaceship(void){
 
-	spaceshipTimerExpired = MOVE_SPACESHIP;
-	moveDir = (getRandomNumber() % 2) ? RIGHT : LEFT;
+	spaceshipTimerExpired = MOVE_SPACESHIP;     //Set the timer to start moving the spaceship
+	moveDir = (getRandomNumber() % 2) ? RIGHT : LEFT;   //Randomly place it on the right or left
 	yPos = (moveDir == RIGHT) ? START_LEFT : START_RIGHT ;
 	drawSpaceship();
 }
 
 /*
- *
+ *	drawSpaceship:
+ *	--------------
+ *	Draws the spaceship to the frame buffer at its current position
  */
 void drawSpaceship(void){
 	int row, col, i, j;
@@ -60,7 +69,9 @@ void drawSpaceship(void){
 }
 
 /**
- *
+ *	moveSpaceship:
+ *	--------------
+ *	Moves the spaceship right or left depending on its current direction
  */
 void moveSpaceship(void){
 	if(moveDir == RIGHT)
@@ -70,15 +81,19 @@ void moveSpaceship(void){
 }
 
 /*
- *
+ *	moveSpaceshipRight
+ *	------------------
+ *	Moves the spaceship right by a constant number of pixels.
+ *	Also deletes the part of the spaceship that is no longer valid.
  */
 void moveSpaceshipRight(void){
 	int row, col;
 
+	//if the spaceship has reached the edge of the screen, erase it
 	if ( yPos > START_RIGHT )
-		eraseSpaceship(F); //may need to do other thing here
+		eraseSpaceship(F);
 	else {
-		//erase part of the spaceship
+		//erase invalid part of the spaceship
 		for( row = SPACESHIP_ROW; row < SPACESHIP_ROW + SPACESHIP_HEIGHT; row++)
 			for(col = yPos; col < yPos + SPACESHIP_MOVE_AMOUNT; col++)
 				framePointer0[row*640 + col] = BLACK;
@@ -89,11 +104,15 @@ void moveSpaceshipRight(void){
 	}
 }
 /*
- *
+ *	moveSpaceshipLeft
+ *	------------------
+ *	Moves the spaceship left by a constant number of pixels.
+ *	Also deletes the part of the spaceship that is no longer valid.
  */
 void moveSpaceshipLeft(void){
 	int row, col;
 
+	//if the spaceship has reached the edge of the screen, erase it
 	if ( yPos < START_LEFT )
 		eraseSpaceship(F);
 	else {
@@ -109,7 +128,12 @@ void moveSpaceshipLeft(void){
 }
 
 /*
+ * eraseSpaceship:
+ * ---------------
+ * Erases the spaceship from the screen.
  *
+ * hit: True if the reason we are erasing the spaceship was because it was hit.
+ * 		Used to set the spaceship timer accordingly.
  */
 void eraseSpaceship(Boolean hit){
 	int row, col, i, j;
@@ -118,39 +142,57 @@ void eraseSpaceship(Boolean hit){
 		for(col = yPos, j = 0; col < yPos + SPACESHIP_WIDTH; col++, j++)
 			framePointer0[row*640 + col] = BLACK;
 
+	//change the max timer of the spaceship timer to the correct value
 	spaceshipTimerExpired = (hit == T) ? ANIMATE_BONUS : SHOW_SPACESHIP;
 }
 
 /**
- *
+ *	spaceshipHit:
+ *	-------------
+ *	This function is called when the spaceship has been hit by the tank bullet. it
+ *	1.) Erases the spaceship
+ *	2.) Randomly assigns a bonus value
+ *	3.) Increments the score
  */
 void spaceshipHit(void){
 
 	eraseSpaceship(T);
-	currentBonus = randomScore[getRandomNumber()%7] ; //maybe change this to be a lower score
-	incrementScore(currentBonus);
+	currentBonus = randomScore[getRandomNumber()%7] ; //randomly selects a bonus value
+	incrementScore(currentBonus); //increments the score
 }
 
 /**
- *
+ * animateBonus:
+ * ------------
+ * Changes the animation state of the bonus, and prints it to the screen
  */
 void animateBonus(void){
+	++animationState;
 
-	if(++animationState & 1 || (animationState > 5 && animationState < 16)){
+	//This part of the animation we don't flash the score, so do nothing
+	if((animationState > 5 && animationState < 16))
+		return;
+	else if(animationState & 1){ //print the bonus score where the spaceship was
 		setTextColor(OFF_WHITE);
 		printScore(currentBonus, SPACESHIP_ROW, yPos, F);
 	}
-	else
+	else //erase the bonus score (for flashing)
 		eraseNumber(3, SPACESHIP_ROW, yPos);
 
+	//end of animation
 	if(animationState == 16) {
 		spaceshipTimerExpired = SHOW_SPACESHIP;
 		animationState = 0;
 	}
-
 }
 
+/**
+ * spaceshipInAir:
+ * ---------------
+ * Returns true if the spaceship is currently in the air
+ */
 Boolean spaceshipInAir(void){
+	//the spaceship is only in the air if it is moving
 	if(spaceshipTimerExpired == MOVE_SPACESHIP)
 		return T;
 

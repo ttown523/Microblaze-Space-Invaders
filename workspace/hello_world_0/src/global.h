@@ -41,25 +41,28 @@ extern unsigned int * framePointer0;
  ((b7  << 7 ) | (b6  << 6 ) | (b5  << 5 ) | (b4  << 4 ) | (b3  << 3 ) | (b2  << 2 ) | (b1  << 1 ) | (b0  << 0 ) )
 
 /***********************************
- *		  Color Macros
+ *		  Global Macros
  **********************************/
+/*Colors*/
 #define GREEN 0x0000FF00
 #define WHITE 0x00FFFFFF
 #define RED   0x00FF0000;
 #define BLACK 0
-#define OFF_WHITE 0x00FFFFFD
+#define OFF_WHITE 0x00FFFFFD //Used for alien bullets to prevent tank bullets detecting a collision
 
+/*Score macros*/
 #define SCORE_START_X 5
 #define SCORE_START_Y (5 + 70)
 
+/*Point directly below the bunkers*/
 #define BELOW_THE_BUNKERS (360 + 36)
-
 
 
 /***********************************
  *      Function definitions
  ***********************************/
 void initScene(void);
+void initGame(void);
 void render(void);
 void clearScreen(void);
 void setFramePointer(unsigned int * framePointer);

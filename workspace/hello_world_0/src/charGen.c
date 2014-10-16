@@ -277,14 +277,23 @@ const u16 * numbers [10] = {
 	O, one, two, three, four, five, six, seven, eight, nine
 };
 
+//keeps track of the current text color
 static unsigned textColor = GREEN;
 
+
+/**
+ * setTextColor:
+ * ------------
+ * Sets the text color to be written
+ */
 void setTextColor(unsigned color){
 	textColor = color;
 }
 
 /**
-*
+*	initializeScoreAndLives:
+*	------------------------
+*	This function prints "SCORE" and "LIVES" to the correct position on the screen
 */
 void initializeScoreAndLives(void){
 
@@ -292,6 +301,7 @@ void initializeScoreAndLives(void){
 	u16 * scoreChar;
 	u16 * livesChar;
 
+	//Switch the character to print each time through the loop
 	for(k = 0; k < 5; k++){
 		switch(k){
 			case 0:
@@ -338,7 +348,15 @@ SKIP:
 }
 
 /**
+ *	printScore:
+ *	-----------
+ *	Decodes the current score into its corresponding digits,
+ *	and prints each digit to the screen
  *
+ *	score: Score to print
+ *	startX: Row to start printing the score
+ *	startY: column to start printing the score
+ *	erase: True if the score at the old position should be erased
  */
 void printScore(unsigned score, unsigned startX, unsigned startY, Boolean erase){
 
@@ -362,6 +380,11 @@ void printScore(unsigned score, unsigned startX, unsigned startY, Boolean erase)
 	}
 }
 
+/**
+ * eraseNumber:
+ * ------------
+ * Erases the specified number of digits off of the screen at the given location
+ */
 void eraseNumber(u8 digits, unsigned startX, unsigned startY) {
 	int row, col;
 	for (row = startX; row < startX + CHAR_SIZE; row++)
@@ -371,7 +394,13 @@ void eraseNumber(u8 digits, unsigned startX, unsigned startY) {
 }
 
 /**
+ *	printNumber:
+ *	------------
+ *	Prints a single digit to the screen at the (x,y) location
  *
+ *	num: digit to print
+ *	x: row to start printing
+ *	y: column to start printing
  */
 void printNumber(int num, int x, int y){
 	int row, col, i, j;
@@ -382,9 +411,10 @@ void printNumber(int num, int x, int y){
 }
 
 
-
 /*
-*
+*	printGameOver:
+*	-------------
+*	Prints the string "GAME OVER" to the screen once the game has ended
 *
 */
 void printGameOver(void) {

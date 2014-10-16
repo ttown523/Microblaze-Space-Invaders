@@ -10,15 +10,18 @@
 #include "bunker.h"
 #include "spaceship.h"
 
+/*Tank attributes*/
 static unsigned short tankPos;
 static pos_t tankBulletPos;
 static Boolean bulletInAir = F;
+Boolean tankIsDead;
 
+
+/*Tank live attributes*/
 static pos_t tankLivePos[8];
 static u8 tankLives;
 
-Boolean tankIsDead;
-
+/*Tank animation attributes*/
 static u8 animationState = 0;
 extern Boolean spaceshipOnScreen;
 
@@ -113,24 +116,28 @@ void initTankPos(){
 	unsigned startTankLivesX = 0 , startTankLivesY = 400 + 70;
 
 	tankPos = TANK_START_POS;
-	tankLives = 3;
+	tankLives = 3;   //tank starts with 3 lives
 	tankIsDead = F;
 
+	//Initialize the position of each tank life
 	for (i = 0; i < 8; i++){
 		tankLivePos[i].x = startTankLivesX;
 		tankLivePos[i].y = startTankLivesY;
-		//drawTankLife(startTankLivesX, startTankLivesY);
-		if(i ==3){
+
+		if(i ==3){ //move to the next row
 			startTankLivesX += TANK_HEIGHT + 5;
 			startTankLivesY = 400 + 70;
 		}
-		else {
+		else
 			startTankLivesY += TANK_WIDTH + 5;
-		}
 	}
-
 }
 
+/**
+ * resetTank:
+ * ----------
+ * Resets the tank to its initial position (under the first bunker)
+ */
 void resetTank (void) {
 	eraseTankLife(NULL);
 	tankPos = TANK_START_POS;
@@ -144,9 +151,6 @@ void resetTank (void) {
  * ---------
  * Draws the tank to the frame buffer at its current location
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: remove framePointer1;
  */
 void drawTank(void) {
 	int row, col, i, j;
@@ -158,7 +162,12 @@ void drawTank(void) {
 }
 
 /**
+ *	drawTankLife:
+ *	-------------
+ *	Draws a tank life to the screen at the correct position
  *
+ *	Parameters:
+ *		- num: The number of the life to draw (0-7)
  */
 void drawTankLife(u8 num) {
 	int row, col, i, j;
@@ -171,7 +180,10 @@ void drawTankLife(u8 num) {
 }
 
 /**
- *
+ * addTankLife:
+ * ------------
+ * Increments the number of tank lives available, and prints the new
+ * tank life to the screen.  The max number of tank lifes is 8 .
  */
 void addTankLife(void){
 	if(tankLives < MAX_TANK_LIVES)
@@ -179,13 +191,23 @@ void addTankLife(void){
 }
 
 /**
+ *	eraseTankLife:
+ *	-------------
+ *	Erases a tank life once the tank has been killed
+ *
+ *	Parameters:
+ *		num - The number of the tank life to erase (0-7)
+ *			  NULL is passed in if we want to erase the entire tank
  *
  */
 void eraseTankLife(u8 num){
 	int row, col, i, j, x, y;
+
+	//index into the tankLivePos array to get the position of the tank life
 	x = (num == NULL) ? TANK_ROW : tankLivePos[num].x;
 	y = (num == NULL) ? tankPos : tankLivePos[num].y;
 
+	//erase it
 	for( row = x, i = 0 ; row < x + TANK_HEIGHT; row++, i++) {
 		 for(col = y, j = 0; col < y + TANK_WIDTH; col++, j++) {
 			 framePointer0[row*640 + col] = BLACK;
@@ -197,14 +219,11 @@ void eraseTankLife(u8 num){
  * --------------
  * Moves the tank right by a constant number of pixels
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: check to see if moving tank collides with alien bullet
  */
 void moveTankRight(void){
 	int row=0, col=0, i=0, j=0;
 
-	if(tankPos <= 600)
+	if(tankPos <= 600)  //prevents tank from going off screen
 		tankPos += TANK_MOVE_AMOUNT;
 
 	//erase old part of tank
@@ -221,14 +240,11 @@ void moveTankRight(void){
  * ------------
  * Moves the tank left by a constant number of pixels
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: check to see if moving tank collides with alien bullet
  */
 void moveTankLeft(void){
 	int row=0, col=0, i=0, j=0;
 
-	if(tankPos >= 10)
+	if(tankPos >= 10)  //prevents tank from going off screen
 		tankPos -= TANK_MOVE_AMOUNT;
 
 	//erase old parts of tank
@@ -242,13 +258,13 @@ void moveTankLeft(void){
 
 
 /**
- *
+ * killTank:
+ * ---------
+ * This function is called when an alien bullet strikes the tank.
  */
-
 void killTank(void){
-
+	//if the tank has run out of lives the game is over
 	if (--tankLives == 0){
-		//game over, do something
 		animateTank();
 		gameEnded();
 	}
@@ -257,14 +273,17 @@ void killTank(void){
 		if(spaceshipInAir() == T)
 			eraseSpaceship(F);
 		animateTank();
+		//This flag freezes everything else (like the game)
 		tankIsDead = T;
-		//erase all bullets on screen
 	}
 }
 
 
 /**
-*
+* animateTank:
+* ------------
+* Displays the current state of the tank animation.  If the tank animation state is  odd,
+* it displays the first animation state, otherwise the second animation state
 */
 void animateTank(void){
 
@@ -286,7 +305,6 @@ void animateTank(void){
  * -----------------
  * Place the tank bullet directly above the tank cannon if there is not already a bullet in the air
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
  */
 void launchTankBullet(void){
 
@@ -301,11 +319,7 @@ void launchTankBullet(void){
 /**
  * moveTankBullet:
  * ---------------
- * If a tank bullet is in the air, move the tank bullet up by a constant number of pixels
- *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: check for collisions after the bullet has been moved
+ * If a tank bullet is in the air, move the tank bullet up by a constant number of pixels and check for collisions
  */
 void moveTankBullet(void) {
 	int row, col, eraseOffset;
@@ -313,14 +327,14 @@ void moveTankBullet(void) {
 	if (bulletInAir == T) {
 		tankBulletPos.x -= BULLET_MOVE_AMOUNT;
 
-		//check for collisions
+		//check if the bullet has moved off screen or it has collided with something
 		if (tankBulletPos.x <= OFFSCREEN  || checkBulletCollision() == T){
 			bulletInAir = F;
-			eraseOffset = BULLET_MOVE_AMOUNT;
+			eraseOffset = BULLET_MOVE_AMOUNT; //erase the entire bullet
 			goto SKIP_DRAWING;
 		}
 		else {
-			eraseOffset = BULLET_HEIGHT;
+			eraseOffset = BULLET_HEIGHT; //erase only the part that has moved
 		}
 
 		//redraw bullet
@@ -338,8 +352,6 @@ SKIP_DRAWING:
  * drawTankBullet:
  * ---------------
  * Draw the tank bullet at its current position
- *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
  */
 void drawTankBullet(void){
 	int row, col, i, j, x = tankBulletPos.x, y = tankBulletPos.y;
@@ -349,25 +361,27 @@ void drawTankBullet(void){
 			 framePointer0[row*640 + col] = tankBullet[i] & (1 << j) ? OFF_WHITE: BLACK;
 }
 
-
 /**
- * todo: check from bottom to top of bullet, rather than top to bottom.
- * 		 also, make sure the bullet is within the alien block! right now, if it strikes
- * 		 an alien bullet, an alien explosion will appear!
+ * checkBulletCollision:
+ * ---------------------
+ * Checks the bottom of the tank bullet to the top checking for collisions.
+ * A collision is detected if we try to draw the tank bullet to a pixel that is not BLACK.
+ *
+ * Returns: True if the bullet has collided with something
  */
 Boolean checkBulletCollision(void){
 	int row, col;
 	//check for collisions
 	for( row = tankBulletPos.x + BULLET_MOVE_AMOUNT + BULLET_HEIGHT - 1; row >= tankBulletPos.x ; row--)
 		for(col = tankBulletPos.y; col < tankBulletPos.y + TANK_BULLET_WIDTH; col++)
-			switch ( framePointer0[row*640 + col] ) {
+			switch ( framePointer0[row*640 + col] ) { //Get the current color of the pixel
 			case WHITE: //alien collision
 				killAlien(getAlienIndex(row, col));
 				return T;
 			case GREEN: //bunker collision
 				erodeBunker(row, col);
 				return T;
-			case 0x00FF0000: //spaceship collision
+			case 0x00FF0000/*RED*/: //spaceship collision...threw an error if we tried to use a macro?
 				spaceshipHit();
 				return T;
 				break;

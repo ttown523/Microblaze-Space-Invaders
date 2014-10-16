@@ -12531,3 +12531,26 @@ Done writing filter settings to:
 	C:\SpaceInvaderTestHW2\etc\system.filters
 Done writing Tab View settings to:
 	C:\SpaceInvaderTestHW2\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+
+********************************************************************************
+At Local date and time: Mon Oct 13 18:00:13 2014
+ make -f system.make exporttosdk started...
+make: Nothing to be done for `exporttosdk'.
+Done!
+
+********************************************************************************
+At Local date and time: Mon Oct 13 18:00:13 2014
+ xsdk.exe -hwspec C:\SpaceInvaderTestHW2\SDK\SDK_Export\hw\system.xml started...
+Xilinx Software Development Kit
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Done!
+Writing filter settings....
+Done writing filter settings to:
+	C:\SpaceInvaderTestHW2\etc\system.filters
+Done writing Tab View settings to:
+	C:\SpaceInvaderTestHW2\etc\system.gui

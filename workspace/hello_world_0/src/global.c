@@ -19,6 +19,8 @@
 unsigned int * framePointer0;
 unsigned score = 0;
 Boolean gameOver;
+
+
 /**
  *	Set the frame pointer that will be written to, so that all files will have access to it
  */
@@ -28,7 +30,9 @@ void setFramePointer(unsigned int * framePointer){
 
 
 /**
- *
+ * clearScreen:
+ * ------------
+ * Prints black to each pixel in the frame pointer
  */
 void clearScreen(void){
 	int row=0, col=0;
@@ -36,6 +40,17 @@ void clearScreen(void){
 	for( row=0; row<480; row++)
 		for(col=0; col<640; col++)
 			framePointer0[row*640 + col] = BLACK;
+}
+
+
+/**
+ * initGame:
+ * ---------
+ * This function contains things that should only happen once per program
+ */
+void initGame(void){
+	gameOver = F;
+	srand(time(NULL)); //seed the random number generator
 }
 
 /**
@@ -46,8 +61,6 @@ void clearScreen(void){
  *
  */
 void initScene(void){
-	gameOver = F;
-	srand(time(NULL));
 	initTankPos();
 	initAliens();
 	initBunkers();
@@ -55,14 +68,10 @@ void initScene(void){
 }
 
 
-
 /**
  * Function: render
  * -------------------
  * 	Draws the bunker, aliens, and tank to the screen after the program has been initialized
- *
- * 	framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
  */
 void render(void) {
 	drawBunker(0);
@@ -79,7 +88,9 @@ void render(void) {
 }
 
 /**
- *
+ * incrementScore:
+ * ---------------
+ * Increases the score by the specified amount, and prints it to the screen
  */
 void incrementScore(unsigned amount) {
 	setTextColor(GREEN);
@@ -87,18 +98,31 @@ void incrementScore(unsigned amount) {
 }
 
 /**
- *
+ * getRandomNumber:
+ * ----------------
+ * Returns a random number
  */
 unsigned getRandomNumber(void){
 	return rand();
 }
 
+/**
+ * gameEnded:
+ * ----------
+ * Sets the gameOver flag to T
+ */
+
 void gameEnded(void){
 	gameOver = T;
 }
 
+/**
+ * game_over:
+ * ----------
+ * Clears the screen, and prints "GAME_OVER"
+ */
 void game_over(void){
-	microblaze_disable_interrupts();
+	microblaze_disable_interrupts(); //no more timer interrupts
 	clearScreen();
 	printGameOver();
 }

@@ -139,10 +139,10 @@ void initAlienBullets(void){
 /**
  * drawAlienBullet:
  * ----------------
- * Draws the specified alien bullet at its current position
+ * Draws the specified alien bullet at its current position.  If the bullet attempts to draw
+ * over a green pixel, a collision is detected and handled
  *
- * num: Which alien bullet to draw
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
+ * num: Which alien bullet to draw (0-3)
  */
 void drawAlienBullet(int num){
 	int row, col, i, j, x = bullets[num].position.x, y = bullets[num].position.y;
@@ -154,15 +154,14 @@ void drawAlienBullet(int num){
 	//draw the bullet into the frame buffer
 	for( row = x, i = 0 ; row < x + BULLET_HEIGHT; row++, i++)
 		 for(col = y, j = 0; col < y + ALIEN_BULLET_WIDTH; col++, j++) {
-			 if(framePointer0[row*640 + col] == GREEN) {
+			 if(framePointer0[row*640 + col] == GREEN) { //collision check,
 				 //erase the bullet, then erode
 				 eraseAlienBullet(num);
 				 collision(num, row, col);
 				 return;
 			}
-			else{
+			else
 				framePointer0[row*640 + col] = bulletBitmap[i] & (1 << j) ? OFF_WHITE : BLACK ;
-			}
 		 }
 }
 
@@ -171,12 +170,6 @@ void drawAlienBullet(int num){
  * -----------------
  * Move each alien bullet by a constant number of pixels if they are in flight
  *
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
- * todo: check for bullet collisions
- *
- * Steps:
- * move bullet, redraw bullet
  */
 void moveAlienBullets(void) {
 	int i, row, col;
@@ -207,6 +200,14 @@ void moveAlienBullets(void) {
 	}
 }
 
+/**
+ * eraseAlienBullet:
+ * -----------------
+ * Erases the alien bullet after a collision
+ *
+ * Parameters:
+ * 		num: bullet number (0-3)
+ */
 void eraseAlienBullet(u8 num) {
 
 	int row, col;
@@ -214,13 +215,16 @@ void eraseAlienBullet(u8 num) {
 	//erase old alien bullet
 	for( row = bullets[num].position.x - BULLET_MOVE_LENGTH; row < bullets[num].position.x + BULLET_HEIGHT; row++)
 		 for(col = bullets[num].position.y; col < bullets[num].position.y + ALIEN_BULLET_WIDTH; col++)
-			 framePointer0[row*640 + col] = BLACK;
+			 if (framePointer0[row*640 + col] == OFF_WHITE)//only erase the white part of the bullet
+				 framePointer0[row*640 + col] = BLACK;
 
 	bullets[num].inFlight = F;
 }
 
 /**
- *
+ *	collision:
+ *	----------
+ *	Called if an alien bullet collision is detected
  */
 void collision(u8 bulletNum, int x, int y) {
 
@@ -235,12 +239,11 @@ void collision(u8 bulletNum, int x, int y) {
  * -----------------
  * Place the alien bullet in its starting location:
  *
- * num: the alien bullet number to place
- * x: row on the screen to place the bullet
- * y: column on the screen to place the bullet:
- * cross: True if the bullet to place is a cross bullet
- * framePointer0: Pointer to the location in memory that the vdma controller uses to write pixels to the screen
- *
+ * Parameters:
+ * 		num - the alien bullet number to place
+ * 		x - row on the screen to place the bullet
+ * 		y - column on the screen to place the bullet:
+ * 		cross - True if the bullet to place is a cross bullet
  */
 void placeAlienBullet(u8 num, int x, int y, Boolean cross) {
 
@@ -250,7 +253,6 @@ void placeAlienBullet(u8 num, int x, int y, Boolean cross) {
 	bullets[num].bulletState = 0;
 	bullets[num].type = cross == T ? CROSS : ZIGZAG;
 	drawAlienBullet(num);
-
 }
 
 /**
@@ -270,22 +272,23 @@ u8 getFirstAvailableBullet() {
 	return 4;
 }
 
+/**
+ * launchedIntoBunker:
+ * -------------------
+ * Tests to see if a recently launched alien bullet was launched directly into the bunker.
+ *
+ * Return: True if the alien bullet was launched into the bunker
+ */
 Boolean launchedIntoBunker(unsigned short startX, unsigned short startY ){
 
 	unsigned short row, col, i, j;
 
 	for (row = startX, i = 0 ; row < startX + BULLET_HEIGHT ; row++, i++)
 		for (col = startY, j = 0; col < startY + ALIEN_BULLET_WIDTH ; col++, j++)
-			if (framePointer0[row*640 + col] == GREEN ){
+			if (framePointer0[row*640 + col] == GREEN ){ //the bullet has been launched into the bunker
 				erodeBunker(row, col);
 				return T;
 			}
 
 	return F;
 }
-
-
-
-
-
-

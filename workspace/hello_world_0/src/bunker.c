@@ -535,7 +535,7 @@ void drawBunkerPart(int num, int i, int j){
 	if (bunkers[num].bunkerState[i][j] != 4) {
 		for(row = x, k = 0; row < x + BLOCK_SIZE; row++, k++){
 			for(col = y, m = 0 ; col < y + BLOCK_SIZE; col++, m++ ){
-				if(framePointer0[row*640 + col] != WHITE && framePointer0[row*640 + col] != BLACK )
+				if(framePointer0[row*640 + col] != WHITE && framePointer0[row*640 + col] != BLACK ) //only erase the pixel if the previous value is not black
 					framePointer0[row*640 + col] = bunkerBitmap[k] & (1 << m) ? GREEN : BLACK;
 			}
 		}
@@ -544,7 +544,7 @@ void drawBunkerPart(int num, int i, int j){
 	{
 		for(row = x, k = 0; row < x + BLOCK_SIZE; row++, k++)
 			for(col = y, m = 0 ; col < y + BLOCK_SIZE; col++, m++ )
-				if(framePointer0[row*640 + col] != WHITE && framePointer0[row*640 + col] != BLACK)
+				if(framePointer0[row*640 + col] != WHITE && framePointer0[row*640 + col] != BLACK) //only erase the pixel if the previous value is not black
 					framePointer0[row*640 + col] = BLACK;
 	}
 

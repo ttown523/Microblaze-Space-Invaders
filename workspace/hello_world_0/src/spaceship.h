@@ -10,6 +10,9 @@
 
 #include "global.h"
 
+/*******************************
+ *  	Spaceship Macros
+ ******************************/
 #define START_LEFT 5
 #define START_RIGHT 600
 #define SPACESHIP_HEIGHT 14
